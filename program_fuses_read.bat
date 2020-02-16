@@ -1,0 +1,1 @@
+avrdude -p PWM3B -E noreset -c pony-stk200 -U lfuse:r:lfuse.txt:h -U hfuse:r:hfuse.txt:h -U efuse:r:efuse.txt:h

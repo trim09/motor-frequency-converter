@@ -1,0 +1,2841 @@
+
+3fazemotor.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .data         000000ae  00800100  00000dc2  00000e56  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  1 .text         00000dc2  00000000  00000000  00000094  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .bss          0000001c  008001ae  008001ae  00000f04  2**0
+                  ALLOC
+  3 .stab         00003c24  00000000  00000000  00000f04  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  4 .stabstr      00001f7f  00000000  00000000  00004b28  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	2d c0       	rjmp	.+90     	; 0x5c <__ctors_end>
+   2:	47 c0       	rjmp	.+142    	; 0x92 <__bad_interrupt>
+   4:	07 c5       	rjmp	.+2574   	; 0xa14 <__vector_2>
+   6:	45 c0       	rjmp	.+138    	; 0x92 <__bad_interrupt>
+   8:	44 c0       	rjmp	.+136    	; 0x92 <__bad_interrupt>
+   a:	43 c0       	rjmp	.+134    	; 0x92 <__bad_interrupt>
+   c:	42 c0       	rjmp	.+132    	; 0x92 <__bad_interrupt>
+   e:	41 c0       	rjmp	.+130    	; 0x92 <__bad_interrupt>
+  10:	40 c0       	rjmp	.+128    	; 0x92 <__bad_interrupt>
+  12:	3f c0       	rjmp	.+126    	; 0x92 <__bad_interrupt>
+  14:	3e c0       	rjmp	.+124    	; 0x92 <__bad_interrupt>
+  16:	3d c0       	rjmp	.+122    	; 0x92 <__bad_interrupt>
+  18:	3c c0       	rjmp	.+120    	; 0x92 <__bad_interrupt>
+  1a:	3b c0       	rjmp	.+118    	; 0x92 <__bad_interrupt>
+  1c:	3a c0       	rjmp	.+116    	; 0x92 <__bad_interrupt>
+  1e:	e0 c2       	rjmp	.+1472   	; 0x5e0 <__vector_15>
+  20:	e0 c5       	rjmp	.+3008   	; 0xbe2 <__vector_16>
+  22:	37 c0       	rjmp	.+110    	; 0x92 <__bad_interrupt>
+  24:	6d c0       	rjmp	.+218    	; 0x100 <__vector_18>
+  26:	35 c0       	rjmp	.+106    	; 0x92 <__bad_interrupt>
+  28:	34 c0       	rjmp	.+104    	; 0x92 <__bad_interrupt>
+  2a:	33 c0       	rjmp	.+102    	; 0x92 <__bad_interrupt>
+  2c:	32 c0       	rjmp	.+100    	; 0x92 <__bad_interrupt>
+  2e:	31 c0       	rjmp	.+98     	; 0x92 <__bad_interrupt>
+  30:	30 c0       	rjmp	.+96     	; 0x92 <__bad_interrupt>
+  32:	2f c0       	rjmp	.+94     	; 0x92 <__bad_interrupt>
+  34:	2e c0       	rjmp	.+92     	; 0x92 <__bad_interrupt>
+  36:	2d c0       	rjmp	.+90     	; 0x92 <__bad_interrupt>
+  38:	2c c0       	rjmp	.+88     	; 0x92 <__bad_interrupt>
+  3a:	2b c0       	rjmp	.+86     	; 0x92 <__bad_interrupt>
+  3c:	2a c0       	rjmp	.+84     	; 0x92 <__bad_interrupt>
+  3e:	29 c0       	rjmp	.+82     	; 0x92 <__bad_interrupt>
+
+00000040 <ASSERTION_FAILED.1678>:
+  40:	41 73 73 65 72 74 69 6f 6e 20 66 61 69 6c 65 64     Assertion failed
+  50:	20 61 74 20 6c 69 6e 65 3a 20 00 00                  at line: ..
+
+0000005c <__ctors_end>:
+  5c:	11 24       	eor	r1, r1
+  5e:	1f be       	out	0x3f, r1	; 63
+  60:	cf ef       	ldi	r28, 0xFF	; 255
+  62:	d2 e0       	ldi	r29, 0x02	; 2
+  64:	de bf       	out	0x3e, r29	; 62
+  66:	cd bf       	out	0x3d, r28	; 61
+
+00000068 <__do_copy_data>:
+  68:	11 e0       	ldi	r17, 0x01	; 1
+  6a:	a0 e0       	ldi	r26, 0x00	; 0
+  6c:	b1 e0       	ldi	r27, 0x01	; 1
+  6e:	e2 ec       	ldi	r30, 0xC2	; 194
+  70:	fd e0       	ldi	r31, 0x0D	; 13
+  72:	02 c0       	rjmp	.+4      	; 0x78 <.do_copy_data_start>
+
+00000074 <.do_copy_data_loop>:
+  74:	05 90       	lpm	r0, Z+
+  76:	0d 92       	st	X+, r0
+
+00000078 <.do_copy_data_start>:
+  78:	ae 3a       	cpi	r26, 0xAE	; 174
+  7a:	b1 07       	cpc	r27, r17
+  7c:	d9 f7       	brne	.-10     	; 0x74 <.do_copy_data_loop>
+
+0000007e <__do_clear_bss>:
+  7e:	11 e0       	ldi	r17, 0x01	; 1
+  80:	ae ea       	ldi	r26, 0xAE	; 174
+  82:	b1 e0       	ldi	r27, 0x01	; 1
+  84:	01 c0       	rjmp	.+2      	; 0x88 <.do_clear_bss_start>
+
+00000086 <.do_clear_bss_loop>:
+  86:	1d 92       	st	X+, r1
+
+00000088 <.do_clear_bss_start>:
+  88:	aa 3c       	cpi	r26, 0xCA	; 202
+  8a:	b1 07       	cpc	r27, r17
+  8c:	e1 f7       	brne	.-8      	; 0x86 <.do_clear_bss_loop>
+  8e:	25 d1       	rcall	.+586    	; 0x2da <main>
+  90:	96 c6       	rjmp	.+3372   	; 0xdbe <_exit>
+
+00000092 <__bad_interrupt>:
+  92:	b6 cf       	rjmp	.-148    	; 0x0 <__vectors>
+
+00000094 <adc_init>:
+		 [INDEX_CURRENT]   = MUX_CONST_PART | MUX_SPEED_POT
+		};
+
+void adc_init(void) {
+	/* enable VCC ref, right adjust the ADC result, cannel ADC010 */
+	ADMUX = adc_mux[0];
+  94:	82 e4       	ldi	r24, 0x42	; 66
+  96:	80 93 7c 00 	sts	0x007C, r24
+
+	/* enable ADC, enable interrupts,  ADC Prescaler = 128, Auto trigger mode */
+    ADCSRA = (1 << ADEN) | (1<<ADIE) | (1<<ADPS2) | (1<<ADPS1) | (1<<ADPS0) | (1<<ADATE);
+  9a:	ea e7       	ldi	r30, 0x7A	; 122
+  9c:	f0 e0       	ldi	r31, 0x00	; 0
+  9e:	8f ea       	ldi	r24, 0xAF	; 175
+  a0:	80 83       	st	Z, r24
+    /* Free Running Mode */
+    ADCSRB = 0;
+  a2:	10 92 7b 00 	sts	0x007B, r1
+
+    /* start conversion */
+    ADCSRA |= 1<<ADSC;
+  a6:	80 81       	ld	r24, Z
+  a8:	80 64       	ori	r24, 0x40	; 64
+  aa:	80 83       	st	Z, r24
+}
+  ac:	08 95       	ret
+
+000000ae <adc_get_speed_pot_value>:
+
+int16_t adc_get_speed_pot_value(void) {
+	int16_t ret;
+
+	ATOMIC_BLOCK(ATOMIC_RESTORESTATE) {
+  ae:	8f b7       	in	r24, 0x3f	; 63
+    return 1;
+}
+
+static __inline__ uint8_t __iCliRetVal(void)
+{
+    cli();
+  b0:	f8 94       	cli
+		ret = adc_speed_pot_value;
+  b2:	90 91 af 01 	lds	r25, 0x01AF
+  b6:	40 91 b0 01 	lds	r20, 0x01B0
+    (void)__s;
+}
+
+static __inline__ void __iRestore(const  uint8_t *__s)
+{
+    SREG = *__s;
+  ba:	8f bf       	out	0x3f, r24	; 63
+    __asm__ volatile ("" ::: "memory");
+  bc:	29 2f       	mov	r18, r25
+  be:	34 2f       	mov	r19, r20
+  c0:	c9 01       	movw	r24, r18
+  c2:	97 fd       	sbrc	r25, 7
+  c4:	0b c0       	rjmp	.+22     	; 0xdc <adc_get_speed_pot_value+0x2e>
+  c6:	9c 01       	movw	r18, r24
+  c8:	02 2e       	mov	r0, r18
+  ca:	23 2f       	mov	r18, r19
+  cc:	00 0c       	add	r0, r0
+  ce:	22 1f       	adc	r18, r18
+  d0:	33 0b       	sbc	r19, r19
+  d2:	00 0c       	add	r0, r0
+  d4:	22 1f       	adc	r18, r18
+  d6:	33 1f       	adc	r19, r19
+	/* fast */
+	//	cassert(ADC_FILTER_LEN == 64);
+	//	DivS16_64(retval, retval);
+
+	return ret;
+}
+  d8:	c9 01       	movw	r24, r18
+  da:	08 95       	ret
+  dc:	cf 96       	adiw	r24, 0x3f	; 63
+  de:	f3 cf       	rjmp	.-26     	; 0xc6 <adc_get_speed_pot_value+0x18>
+
+000000e0 <adc_get_voltage_value>:
+
+uint16_t adc_get_voltage_value(void) {
+	uint16_t ret;
+	ATOMIC_BLOCK(ATOMIC_RESTORESTATE) {
+  e0:	8f b7       	in	r24, 0x3f	; 63
+    return 1;
+}
+
+static __inline__ uint8_t __iCliRetVal(void)
+{
+    cli();
+  e2:	f8 94       	cli
+		ret = adc_voltage_value;
+  e4:	20 91 b1 01 	lds	r18, 0x01B1
+  e8:	30 91 b2 01 	lds	r19, 0x01B2
+    (void)__s;
+}
+
+static __inline__ void __iRestore(const  uint8_t *__s)
+{
+    SREG = *__s;
+  ec:	8f bf       	out	0x3f, r24	; 63
+    __asm__ volatile ("" ::: "memory");
+  ee:	36 95       	lsr	r19
+  f0:	27 95       	ror	r18
+  f2:	36 95       	lsr	r19
+  f4:	27 95       	ror	r18
+	}
+	ret /= ADC_VOLTAGE_FILTER_LEN;
+	return ret;
+}
+  f6:	c9 01       	movw	r24, r18
+  f8:	08 95       	ret
+
+000000fa <adc_get_current_value>:
+
+uint8_t adc_get_current_value(void) {
+	return adc_current_value;
+}
+  fa:	80 91 b3 01 	lds	r24, 0x01B3
+  fe:	08 95       	ret
+
+00000100 <__vector_18>:
+
+	return val;
+}
+
+/* adc_value = (adc_value * (ADC_FILTER_LEN - 1) / ADC_FILTER_LEN) + ADC; */
+ISR(ADC_vect) {
+ 100:	1f 92       	push	r1
+ 102:	0f 92       	push	r0
+ 104:	0f b6       	in	r0, 0x3f	; 63
+ 106:	0f 92       	push	r0
+ 108:	11 24       	eor	r1, r1
+ 10a:	2f 93       	push	r18
+ 10c:	3f 93       	push	r19
+ 10e:	4f 93       	push	r20
+ 110:	6f 93       	push	r22
+ 112:	7f 93       	push	r23
+ 114:	8f 93       	push	r24
+ 116:	9f 93       	push	r25
+ 118:	ef 93       	push	r30
+ 11a:	ff 93       	push	r31
+	static uint8_t last_index = INDEX_SPEED_POT;
+
+	switch (last_index) {
+ 11c:	40 91 ae 01 	lds	r20, 0x01AE
+ 120:	41 30       	cpi	r20, 0x01	; 1
+ 122:	09 f4       	brne	.+2      	; 0x126 <__vector_18+0x26>
+ 124:	3e c0       	rjmp	.+124    	; 0x1a2 <end+0x28>
+ 126:	41 30       	cpi	r20, 0x01	; 1
+ 128:	e0 f0       	brcs	.+56     	; 0x162 <__vector_18+0x62>
+ 12a:	42 30       	cpi	r20, 0x02	; 2
+ 12c:	09 f4       	brne	.+2      	; 0x130 <__vector_18+0x30>
+ 12e:	4e c0       	rjmp	.+156    	; 0x1cc <end+0x52>
+		break;
+	default:
+		assert_soft(0);
+	}
+
+	last_index++;
+ 130:	4f 5f       	subi	r20, 0xFF	; 255
+ 132:	40 93 ae 01 	sts	0x01AE, r20
+	if (last_index == countof(adc_mux)) {
+		last_index = 0;
+	}
+
+	ADMUX = adc_mux[last_index];
+ 136:	e0 91 ae 01 	lds	r30, 0x01AE
+ 13a:	f0 e0       	ldi	r31, 0x00	; 0
+ 13c:	e0 50       	subi	r30, 0x00	; 0
+ 13e:	ff 4f       	sbci	r31, 0xFF	; 255
+ 140:	80 81       	ld	r24, Z
+ 142:	80 93 7c 00 	sts	0x007C, r24
+}
+ 146:	ff 91       	pop	r31
+ 148:	ef 91       	pop	r30
+ 14a:	9f 91       	pop	r25
+ 14c:	8f 91       	pop	r24
+ 14e:	7f 91       	pop	r23
+ 150:	6f 91       	pop	r22
+ 152:	4f 91       	pop	r20
+ 154:	3f 91       	pop	r19
+ 156:	2f 91       	pop	r18
+ 158:	0f 90       	pop	r0
+ 15a:	0f be       	out	0x3f, r0	; 63
+ 15c:	0f 90       	pop	r0
+ 15e:	1f 90       	pop	r1
+ 160:	18 95       	reti
+	switch (last_index) {
+	case INDEX_SPEED_POT:
+		/* adc_value * (ADC_FILTER_LEN - 1) / ADC_FILTER_LEN =>
+		 * adc_value - adc_value / ADC_FILTER_LEN */
+		/* slow (use DivS16_64() to speed it up) */
+		adc_speed_pot_value -= adc_speed_pot_value / ADC_SPEED_FILTER_LEN;
+ 162:	80 91 af 01 	lds	r24, 0x01AF
+ 166:	90 91 b0 01 	lds	r25, 0x01B0
+
+/* convert from shifted code to 2's complement code
+ *	when the ADC output is higher than 512, the measure is positive
+ *	when the ADC output is lower  then 512, the measure is negative */
+static inline int16_t adc_get_complement(void) {
+	int16_t val = ADC;
+ 16a:	60 91 78 00 	lds	r22, 0x0078
+ 16e:	70 91 79 00 	lds	r23, 0x0079
+	asm ("bst	%B[new_val], 1;	\n\t"
+ 172:	71 fb       	bst	r23, 1
+ 174:	7d 7f       	andi	r23, 0xFD	; 253
+ 176:	0e f0       	brts	.+2      	; 0x17a <end>
+ 178:	7e 6f       	ori	r23, 0xFE	; 254
+
+0000017a <end>:
+	case INDEX_SPEED_POT:
+		/* adc_value * (ADC_FILTER_LEN - 1) / ADC_FILTER_LEN =>
+		 * adc_value - adc_value / ADC_FILTER_LEN */
+		/* slow (use DivS16_64() to speed it up) */
+		adc_speed_pot_value -= adc_speed_pot_value / ADC_SPEED_FILTER_LEN;
+		adc_speed_pot_value += adc_get_complement();
+ 17a:	9c 01       	movw	r18, r24
+ 17c:	97 fd       	sbrc	r25, 7
+ 17e:	33 c0       	rjmp	.+102    	; 0x1e6 <end+0x6c>
+ 180:	02 2e       	mov	r0, r18
+ 182:	23 2f       	mov	r18, r19
+ 184:	00 0c       	add	r0, r0
+ 186:	22 1f       	adc	r18, r18
+ 188:	33 0b       	sbc	r19, r19
+ 18a:	00 0c       	add	r0, r0
+ 18c:	22 1f       	adc	r18, r18
+ 18e:	33 1f       	adc	r19, r19
+ 190:	82 1b       	sub	r24, r18
+ 192:	93 0b       	sbc	r25, r19
+ 194:	86 0f       	add	r24, r22
+ 196:	97 1f       	adc	r25, r23
+ 198:	90 93 b0 01 	sts	0x01B0, r25
+ 19c:	80 93 af 01 	sts	0x01AF, r24
+ 1a0:	c7 cf       	rjmp	.-114    	; 0x130 <__vector_18+0x30>
+		break;
+	case INDEX_VOLTAGE:
+		adc_voltage_value -= adc_voltage_value / ADC_VOLTAGE_FILTER_LEN;
+ 1a2:	20 91 b1 01 	lds	r18, 0x01B1
+ 1a6:	30 91 b2 01 	lds	r19, 0x01B2
+		adc_voltage_value += ADC;
+ 1aa:	80 91 78 00 	lds	r24, 0x0078
+ 1ae:	90 91 79 00 	lds	r25, 0x0079
+ 1b2:	82 0f       	add	r24, r18
+ 1b4:	93 1f       	adc	r25, r19
+ 1b6:	36 95       	lsr	r19
+ 1b8:	27 95       	ror	r18
+ 1ba:	36 95       	lsr	r19
+ 1bc:	27 95       	ror	r18
+ 1be:	82 1b       	sub	r24, r18
+ 1c0:	93 0b       	sbc	r25, r19
+ 1c2:	90 93 b2 01 	sts	0x01B2, r25
+ 1c6:	80 93 b1 01 	sts	0x01B1, r24
+ 1ca:	b2 cf       	rjmp	.-156    	; 0x130 <__vector_18+0x30>
+		break;
+	case INDEX_CURRENT:
+		adc_current_value = (uint8_t)(ADC >> 2);
+ 1cc:	80 91 78 00 	lds	r24, 0x0078
+ 1d0:	90 91 79 00 	lds	r25, 0x0079
+ 1d4:	96 95       	lsr	r25
+ 1d6:	87 95       	ror	r24
+ 1d8:	96 95       	lsr	r25
+ 1da:	87 95       	ror	r24
+ 1dc:	80 93 b3 01 	sts	0x01B3, r24
+		assert_soft(0);
+	}
+
+	last_index++;
+	if (last_index == countof(adc_mux)) {
+		last_index = 0;
+ 1e0:	10 92 ae 01 	sts	0x01AE, r1
+ 1e4:	a8 cf       	rjmp	.-176    	; 0x136 <__vector_18+0x36>
+	case INDEX_SPEED_POT:
+		/* adc_value * (ADC_FILTER_LEN - 1) / ADC_FILTER_LEN =>
+		 * adc_value - adc_value / ADC_FILTER_LEN */
+		/* slow (use DivS16_64() to speed it up) */
+		adc_speed_pot_value -= adc_speed_pot_value / ADC_SPEED_FILTER_LEN;
+		adc_speed_pot_value += adc_get_complement();
+ 1e6:	21 5c       	subi	r18, 0xC1	; 193
+ 1e8:	3f 4f       	sbci	r19, 0xFF	; 255
+ 1ea:	ca cf       	rjmp	.-108    	; 0x180 <end+0x6>
+
+000001ec <assert_handle>:
+#include "led.h"
+#include <avr/interrupt.h>
+#include <util/delay.h>
+#include <stdio.h>
+
+void assert_handle(int line) {
+ 1ec:	8c 01       	movw	r16, r24
+	cli();
+ 1ee:	f8 94       	cli
+	psc_halt();
+ 1f0:	8b d3       	rcall	.+1814   	; 0x908 <psc_halt>
+	led_init();
+ 1f2:	59 d0       	rcall	.+178    	; 0x2a6 <led_init>
+
+#ifndef DEBUG
+	static const char ASSERTION_FAILED[] PROGMEM = "Assertion failed at line: ";
+	uart_puts_P(ASSERTION_FAILED);
+ 1f4:	80 e4       	ldi	r24, 0x40	; 64
+ 1f6:	90 e0       	ldi	r25, 0x00	; 0
+ 1f8:	3e d2       	rcall	.+1148   	; 0x676 <uart_puts_P>
+	uart_putx(line);
+ 1fa:	c8 01       	movw	r24, r16
+ 1fc:	6f d2       	rcall	.+1246   	; 0x6dc <uart_putx>
+#else
+	static const char ASSERTION_FAILED[] PROGMEM = "Assertion failed at line: %d\n";
+	printf_P(ASSERTION_FAILED, line);
+#endif
+
+	led1_set_state(OFF);
+ 1fe:	80 e0       	ldi	r24, 0x00	; 0
+ 200:	5a d0       	rcall	.+180    	; 0x2b6 <led1_set_state>
+	led2_set_state(ON);
+ 202:	81 e0       	ldi	r24, 0x01	; 1
+ 204:	63 d0       	rcall	.+198    	; 0x2cc <led2_set_state>
+    milliseconds can be achieved.
+ */
+void
+_delay_loop_2(uint16_t __count)
+{
+	__asm__ volatile (
+ 206:	c0 e9       	ldi	r28, 0x90	; 144
+ 208:	d1 e0       	ldi	r29, 0x01	; 1
+	while(1) {
+		led1_toggle();
+ 20a:	50 d0       	rcall	.+160    	; 0x2ac <led1_toggle>
+		led2_toggle();
+ 20c:	5a d0       	rcall	.+180    	; 0x2c2 <led2_toggle>
+ 20e:	20 ed       	ldi	r18, 0xD0	; 208
+ 210:	37 e0       	ldi	r19, 0x07	; 7
+ 212:	ce 01       	movw	r24, r28
+ 214:	01 97       	sbiw	r24, 0x01	; 1
+ 216:	f1 f7       	brne	.-4      	; 0x214 <assert_handle+0x28>
+		__ticks = (uint16_t) (__ms * 10.0);
+		while(__ticks)
+		{
+			// wait 1/10 ms
+			_delay_loop_2(((F_CPU) / 4e3) / 10);
+			__ticks --;
+ 218:	21 50       	subi	r18, 0x01	; 1
+ 21a:	30 40       	sbci	r19, 0x00	; 0
+		__ticks = 1;
+	else if (__tmp > 65535)
+	{
+		//	__ticks = requested delay in 1/10 ms
+		__ticks = (uint16_t) (__ms * 10.0);
+		while(__ticks)
+ 21c:	d1 f7       	brne	.-12     	; 0x212 <assert_handle+0x26>
+ 21e:	f5 cf       	rjmp	.-22     	; 0x20a <assert_handle+0x1e>
+
+00000220 <break_init>:
+void break_on(void) {
+	BREAK_PORT |=  1 << BREAK;
+}
+
+void break_off(void) {
+	BREAK_PORT &=  ~(1 << BREAK);
+ 220:	59 98       	cbi	0x0b, 1	; 11
+#define BREAK_DDR  DDRD
+#define BREAK      PD1
+
+void break_init(void) {
+    break_off();
+    BREAK_DDR |= 1 << BREAK;
+ 222:	51 9a       	sbi	0x0a, 1	; 10
+}
+ 224:	08 95       	ret
+
+00000226 <break_on>:
+
+void break_on(void) {
+	BREAK_PORT |=  1 << BREAK;
+ 226:	59 9a       	sbi	0x0b, 1	; 11
+}
+ 228:	08 95       	ret
+
+0000022a <break_off>:
+
+void break_off(void) {
+	BREAK_PORT &=  ~(1 << BREAK);
+ 22a:	59 98       	cbi	0x0b, 1	; 11
+}
+ 22c:	08 95       	ret
+
+0000022e <dac_init>:
+
+#define DAC_MAX_VALUE ((1 << 10) - 1)
+
+void dac_init(void) {
+	/* DAC enable, right adjust (10 bit), output enable */
+	DACON = (1 << DAEN) | (1 << DAOE);
+ 22e:	83 e0       	ldi	r24, 0x03	; 3
+ 230:	80 93 aa 00 	sts	0x00AA, r24
+}
+ 234:	08 95       	ret
+
+00000236 <dac_set_value>:
+
+void dac_set_value(uint16_t value) {
+	DACL = LOW(value);
+ 236:	80 93 ab 00 	sts	0x00AB, r24
+	DACH = HIGH(value);
+ 23a:	90 93 ac 00 	sts	0x00AC, r25
+}
+ 23e:	08 95       	ret
+
+00000240 <dac_set_value_scaled>:
+
+void dac_set_value_scaled(uint16_t value, uint16_t max_value) {
+	assert(value <= max_value);
+ 240:	68 17       	cp	r22, r24
+ 242:	79 07       	cpc	r23, r25
+ 244:	68 f1       	brcs	.+90     	; 0x2a0 <dac_set_value_scaled+0x60>
+	if (max_value < DAC_MAX_VALUE) {
+ 246:	23 e0       	ldi	r18, 0x03	; 3
+ 248:	6f 3f       	cpi	r22, 0xFF	; 255
+ 24a:	72 07       	cpc	r23, r18
+ 24c:	a8 f4       	brcc	.+42     	; 0x278 <dac_set_value_scaled+0x38>
+		while (max_value * 2 <= DAC_MAX_VALUE) {
+ 24e:	66 0f       	add	r22, r22
+ 250:	77 1f       	adc	r23, r23
+ 252:	24 e0       	ldi	r18, 0x04	; 4
+ 254:	60 30       	cpi	r22, 0x00	; 0
+ 256:	72 07       	cpc	r23, r18
+ 258:	50 f4       	brcc	.+20     	; 0x26e <dac_set_value_scaled+0x2e>
+			assert(max_value <= UINT16_MAX / 2);
+			max_value *= 2;
+			assert(value <= UINT16_MAX / 2);
+ 25a:	97 fd       	sbrc	r25, 7
+ 25c:	1e c0       	rjmp	.+60     	; 0x29a <dac_set_value_scaled+0x5a>
+			value *= 2;
+ 25e:	88 0f       	add	r24, r24
+ 260:	99 1f       	adc	r25, r25
+}
+
+void dac_set_value_scaled(uint16_t value, uint16_t max_value) {
+	assert(value <= max_value);
+	if (max_value < DAC_MAX_VALUE) {
+		while (max_value * 2 <= DAC_MAX_VALUE) {
+ 262:	66 0f       	add	r22, r22
+ 264:	77 1f       	adc	r23, r23
+ 266:	24 e0       	ldi	r18, 0x04	; 4
+ 268:	60 30       	cpi	r22, 0x00	; 0
+ 26a:	72 07       	cpc	r23, r18
+ 26c:	b0 f3       	brcs	.-20     	; 0x25a <dac_set_value_scaled+0x1a>
+	/* DAC enable, right adjust (10 bit), output enable */
+	DACON = (1 << DAEN) | (1 << DAOE);
+}
+
+void dac_set_value(uint16_t value) {
+	DACL = LOW(value);
+ 26e:	80 93 ab 00 	sts	0x00AB, r24
+	DACH = HIGH(value);
+ 272:	90 93 ac 00 	sts	0x00AC, r25
+			value /= 2;
+		}
+	}
+
+	dac_set_value(value);
+}
+ 276:	08 95       	ret
+			max_value *= 2;
+			assert(value <= UINT16_MAX / 2);
+			value *= 2;
+		}
+	} else {
+		while (max_value > DAC_MAX_VALUE) {
+ 278:	23 e0       	ldi	r18, 0x03	; 3
+ 27a:	6f 3f       	cpi	r22, 0xFF	; 255
+ 27c:	72 07       	cpc	r23, r18
+ 27e:	b9 f3       	breq	.-18     	; 0x26e <dac_set_value_scaled+0x2e>
+			max_value /= 2;
+ 280:	76 95       	lsr	r23
+ 282:	67 95       	ror	r22
+			value /= 2;
+ 284:	96 95       	lsr	r25
+ 286:	87 95       	ror	r24
+			max_value *= 2;
+			assert(value <= UINT16_MAX / 2);
+			value *= 2;
+		}
+	} else {
+		while (max_value > DAC_MAX_VALUE) {
+ 288:	24 e0       	ldi	r18, 0x04	; 4
+ 28a:	60 30       	cpi	r22, 0x00	; 0
+ 28c:	72 07       	cpc	r23, r18
+ 28e:	c0 f7       	brcc	.-16     	; 0x280 <dac_set_value_scaled+0x40>
+	/* DAC enable, right adjust (10 bit), output enable */
+	DACON = (1 << DAEN) | (1 << DAOE);
+}
+
+void dac_set_value(uint16_t value) {
+	DACL = LOW(value);
+ 290:	80 93 ab 00 	sts	0x00AB, r24
+	DACH = HIGH(value);
+ 294:	90 93 ac 00 	sts	0x00AC, r25
+			value /= 2;
+		}
+	}
+
+	dac_set_value(value);
+}
+ 298:	08 95       	ret
+	assert(value <= max_value);
+	if (max_value < DAC_MAX_VALUE) {
+		while (max_value * 2 <= DAC_MAX_VALUE) {
+			assert(max_value <= UINT16_MAX / 2);
+			max_value *= 2;
+			assert(value <= UINT16_MAX / 2);
+ 29a:	89 e1       	ldi	r24, 0x19	; 25
+ 29c:	90 e0       	ldi	r25, 0x00	; 0
+ 29e:	a6 df       	rcall	.-180    	; 0x1ec <assert_handle>
+	DACL = LOW(value);
+	DACH = HIGH(value);
+}
+
+void dac_set_value_scaled(uint16_t value, uint16_t max_value) {
+	assert(value <= max_value);
+ 2a0:	84 e1       	ldi	r24, 0x14	; 20
+ 2a2:	90 e0       	ldi	r25, 0x00	; 0
+ 2a4:	a3 df       	rcall	.-186    	; 0x1ec <assert_handle>
+
+000002a6 <led_init>:
+#define LED2      PD2
+
+
+/* Nastavi DDR registr, aby bylo mozne ovladat ledku - pin ledky jako vystupni */
+void led_init(void) {
+    LED1_DDR |= 1 << LED1;
+ 2a6:	3a 9a       	sbi	0x07, 2	; 7
+    LED2_DDR |= 1 << LED2;
+ 2a8:	52 9a       	sbi	0x0a, 2	; 10
+}
+ 2aa:	08 95       	ret
+
+000002ac <led1_toggle>:
+
+/* Zmeni stav ledky */
+void led1_toggle(void){
+    LED1_PORT ^=  1 << LED1; // XOR
+ 2ac:	88 b1       	in	r24, 0x08	; 8
+ 2ae:	94 e0       	ldi	r25, 0x04	; 4
+ 2b0:	89 27       	eor	r24, r25
+ 2b2:	88 b9       	out	0x08, r24	; 8
+}
+ 2b4:	08 95       	ret
+
+000002b6 <led1_set_state>:
+
+void led1_set_state(state_t state) {
+	if (state == ON) {
+ 2b6:	81 30       	cpi	r24, 0x01	; 1
+ 2b8:	11 f0       	breq	.+4      	; 0x2be <led1_set_state+0x8>
+		LED1_PORT &=  ~(1 << LED1);
+	} else {
+		LED1_PORT |=  1 << LED1;
+ 2ba:	42 9a       	sbi	0x08, 2	; 8
+ 2bc:	08 95       	ret
+    LED1_PORT ^=  1 << LED1; // XOR
+}
+
+void led1_set_state(state_t state) {
+	if (state == ON) {
+		LED1_PORT &=  ~(1 << LED1);
+ 2be:	42 98       	cbi	0x08, 2	; 8
+ 2c0:	08 95       	ret
+
+000002c2 <led2_toggle>:
+		LED1_PORT |=  1 << LED1;
+	}
+}
+
+void led2_toggle(void){
+    LED2_PORT ^=  1 << LED2; // XOR
+ 2c2:	8b b1       	in	r24, 0x0b	; 11
+ 2c4:	94 e0       	ldi	r25, 0x04	; 4
+ 2c6:	89 27       	eor	r24, r25
+ 2c8:	8b b9       	out	0x0b, r24	; 11
+}
+ 2ca:	08 95       	ret
+
+000002cc <led2_set_state>:
+
+void led2_set_state(state_t state) {
+	if (state == ON) {
+ 2cc:	81 30       	cpi	r24, 0x01	; 1
+ 2ce:	11 f0       	breq	.+4      	; 0x2d4 <led2_set_state+0x8>
+		LED2_PORT &=  ~(1 << LED2);
+	} else {
+		LED2_PORT |=  1 << LED2;
+ 2d0:	5a 9a       	sbi	0x0b, 2	; 11
+ 2d2:	08 95       	ret
+    LED2_PORT ^=  1 << LED2; // XOR
+}
+
+void led2_set_state(state_t state) {
+	if (state == ON) {
+		LED2_PORT &=  ~(1 << LED2);
+ 2d4:	5a 98       	cbi	0x0b, 2	; 11
+ 2d6:	08 95       	ret
+
+000002d8 <print_info>:
+			(uint16_t)(((uint32_t)test_amplitude * 325) / MAX_PWM));
+}
+#else
+void print_info(void) {
+	return;
+}
+ 2d8:	08 95       	ret
+
+000002da <main>:
+#endif
+
+
+int main(void) {
+ 2da:	cf 93       	push	r28
+ 2dc:	df 93       	push	r29
+	PORTB = 0xFF; /* enable pull up on PORTB */
+ 2de:	8f ef       	ldi	r24, 0xFF	; 255
+ 2e0:	85 b9       	out	0x05, r24	; 5
+	PORTC = 0xFF; /* enable pull up on PORTC */
+ 2e2:	88 b9       	out	0x08, r24	; 8
+	PORTD = 0xFF; /* enable pull up on PORTD */
+ 2e4:	8b b9       	out	0x0b, r24	; 11
+	PORTE = 0xFF; /* enable pull up on PORTE */
+ 2e6:	8e b9       	out	0x0e, r24	; 14
+
+	time_init();
+ 2e8:	39 d1       	rcall	.+626    	; 0x55c <time_init>
+	switch_init();
+ 2ea:	30 d1       	rcall	.+608    	; 0x54c <switch_init>
+	break_init();
+ 2ec:	99 df       	rcall	.-206    	; 0x220 <break_init>
+	dac_init();
+ 2ee:	9f df       	rcall	.-194    	; 0x22e <dac_init>
+	uart_init();
+ 2f0:	8e d1       	rcall	.+796    	; 0x60e <uart_init>
+	led_init();
+ 2f2:	d9 df       	rcall	.-78     	; 0x2a6 <led_init>
+	adc_init();
+ 2f4:	cf de       	rcall	.-610    	; 0x94 <adc_init>
+	psc_init(MAX_PWM, DEADTIME);
+ 2f6:	80 e0       	ldi	r24, 0x00	; 0
+ 2f8:	98 e0       	ldi	r25, 0x08	; 8
+ 2fa:	60 e4       	ldi	r22, 0x40	; 64
+ 2fc:	d9 d2       	rcall	.+1458   	; 0x8b0 <psc_init>
+	timer0_init();
+ 2fe:	68 d4       	rcall	.+2256   	; 0xbd0 <timer0_init>
+
+	sei(); /* allow interruptions */
+ 300:	78 94       	sei
+ 302:	c0 e9       	ldi	r28, 0x90	; 144
+ 304:	d1 e0       	ldi	r29, 0x01	; 1
+
+	while (1) {
+        led1_toggle();
+ 306:	d2 df       	rcall	.-92     	; 0x2ac <led1_toggle>
+		led2_set_state(switch_get_state()); /* TODO - can be removed */
+ 308:	23 d1       	rcall	.+582    	; 0x550 <switch_get_state>
+ 30a:	e0 df       	rcall	.-64     	; 0x2cc <led2_set_state>
+ 30c:	24 ec       	ldi	r18, 0xC4	; 196
+ 30e:	39 e0       	ldi	r19, 0x09	; 9
+ 310:	ce 01       	movw	r24, r28
+ 312:	01 97       	sbiw	r24, 0x01	; 1
+ 314:	f1 f7       	brne	.-4      	; 0x312 <__stack+0x13>
+		{
+			// wait 1/10 ms
+			_delay_loop_2(((F_CPU) / 4e3) / 10);
+			__ticks --;
+ 316:	21 50       	subi	r18, 0x01	; 1
+ 318:	30 40       	sbci	r19, 0x00	; 0
+		__ticks = 1;
+	else if (__tmp > 65535)
+	{
+		//	__ticks = requested delay in 1/10 ms
+		__ticks = (uint16_t) (__ms * 10.0);
+		while(__ticks)
+ 31a:	d1 f7       	brne	.-12     	; 0x310 <__stack+0x11>
+ 31c:	f4 cf       	rjmp	.-24     	; 0x306 <__stack+0x7>
+
+0000031e <pid_Init>:
+ *  \param pid  Struct with PID status.
+ */
+void pid_Init(int16_t p_factor, int16_t i_factor, int16_t d_factor,
+		struct PID_DATA *pid)
+// Set up PID controller parameters
+{
+ 31e:	cf 92       	push	r12
+ 320:	df 92       	push	r13
+ 322:	ef 92       	push	r14
+ 324:	ff 92       	push	r15
+ 326:	0f 93       	push	r16
+ 328:	1f 93       	push	r17
+ 32a:	fc 01       	movw	r30, r24
+ 32c:	7b 01       	movw	r14, r22
+ 32e:	69 01       	movw	r12, r18
+	// Start values for PID controller
+	pid->sumError = 0;
+ 330:	d9 01       	movw	r26, r18
+ 332:	12 96       	adiw	r26, 0x02	; 2
+ 334:	1d 92       	st	X+, r1
+ 336:	1d 92       	st	X+, r1
+ 338:	1d 92       	st	X+, r1
+ 33a:	1c 92       	st	X, r1
+ 33c:	15 97       	sbiw	r26, 0x05	; 5
+	pid->lastProcessValue = 0;
+ 33e:	11 96       	adiw	r26, 0x01	; 1
+ 340:	1c 92       	st	X, r1
+ 342:	1e 92       	st	-X, r1
+	// Tuning constants for PID loop
+	pid->P_Factor = p_factor;
+ 344:	17 96       	adiw	r26, 0x07	; 7
+ 346:	9c 93       	st	X, r25
+ 348:	8e 93       	st	-X, r24
+ 34a:	16 97       	sbiw	r26, 0x06	; 6
+	pid->I_Factor = i_factor;
+ 34c:	19 96       	adiw	r26, 0x09	; 9
+ 34e:	7c 93       	st	X, r23
+ 350:	6e 93       	st	-X, r22
+ 352:	18 97       	sbiw	r26, 0x08	; 8
+	pid->D_Factor = d_factor;
+ 354:	1b 96       	adiw	r26, 0x0b	; 11
+ 356:	5c 93       	st	X, r21
+ 358:	4e 93       	st	-X, r20
+ 35a:	1a 97       	sbiw	r26, 0x0a	; 10
+	// Limits to avoid overflow
+	pid->maxError = INT16_MAX / (pid->P_Factor + 1);
+ 35c:	31 96       	adiw	r30, 0x01	; 1
+ 35e:	8f ef       	ldi	r24, 0xFF	; 255
+ 360:	9f e7       	ldi	r25, 0x7F	; 127
+ 362:	bf 01       	movw	r22, r30
+ 364:	c8 d4       	rcall	.+2448   	; 0xcf6 <__divmodhi4>
+ 366:	f9 01       	movw	r30, r18
+ 368:	75 87       	std	Z+13, r23	; 0x0d
+ 36a:	64 87       	std	Z+12, r22	; 0x0c
+	pid->maxSumError = (INT32_MAX / 2) / (pid->I_Factor + 1);
+ 36c:	08 94       	sec
+ 36e:	e1 1c       	adc	r14, r1
+ 370:	f1 1c       	adc	r15, r1
+ 372:	00 27       	eor	r16, r16
+ 374:	f7 fc       	sbrc	r15, 7
+ 376:	00 95       	com	r16
+ 378:	10 2f       	mov	r17, r16
+ 37a:	6f ef       	ldi	r22, 0xFF	; 255
+ 37c:	7f ef       	ldi	r23, 0xFF	; 255
+ 37e:	8f ef       	ldi	r24, 0xFF	; 255
+ 380:	9f e3       	ldi	r25, 0x3F	; 63
+ 382:	a8 01       	movw	r20, r16
+ 384:	97 01       	movw	r18, r14
+ 386:	ca d4       	rcall	.+2452   	; 0xd1c <__divmodsi4>
+ 388:	d6 01       	movw	r26, r12
+ 38a:	1e 96       	adiw	r26, 0x0e	; 14
+ 38c:	2d 93       	st	X+, r18
+ 38e:	3d 93       	st	X+, r19
+ 390:	4d 93       	st	X+, r20
+ 392:	5c 93       	st	X, r21
+ 394:	51 97       	sbiw	r26, 0x11	; 17
+}
+ 396:	1f 91       	pop	r17
+ 398:	0f 91       	pop	r16
+ 39a:	ff 90       	pop	r15
+ 39c:	ef 90       	pop	r14
+ 39e:	df 90       	pop	r13
+ 3a0:	cf 90       	pop	r12
+ 3a2:	08 95       	ret
+
+000003a4 <pid_Controller>:
+ *  \param setPoint  Desired value.
+ *  \param processValue  Measured value.
+ *  \param pid_st  PID status struct.
+ */
+int16_t pid_Controller(int16_t setPoint, int16_t processValue,
+		struct PID_DATA *pid_st) {
+ 3a4:	8f 92       	push	r8
+ 3a6:	9f 92       	push	r9
+ 3a8:	af 92       	push	r10
+ 3aa:	bf 92       	push	r11
+ 3ac:	cf 92       	push	r12
+ 3ae:	df 92       	push	r13
+ 3b0:	ef 92       	push	r14
+ 3b2:	ff 92       	push	r15
+ 3b4:	0f 93       	push	r16
+ 3b6:	1f 93       	push	r17
+ 3b8:	cf 93       	push	r28
+ 3ba:	df 93       	push	r29
+ 3bc:	4b 01       	movw	r8, r22
+ 3be:	ea 01       	movw	r28, r20
+	int16_t error, p_term, d_term;
+	int32_t i_term, ret, temp;
+
+	error = setPoint - processValue;
+ 3c0:	ac 01       	movw	r20, r24
+ 3c2:	46 1b       	sub	r20, r22
+ 3c4:	57 0b       	sbc	r21, r23
+
+	// Calculate Pterm and limit error overflow
+	if (error > pid_st->maxError) {
+ 3c6:	2c 85       	ldd	r18, Y+12	; 0x0c
+ 3c8:	3d 85       	ldd	r19, Y+13	; 0x0d
+ 3ca:	24 17       	cp	r18, r20
+ 3cc:	35 07       	cpc	r19, r21
+ 3ce:	0c f0       	brlt	.+2      	; 0x3d2 <pid_Controller+0x2e>
+ 3d0:	87 c0       	rjmp	.+270    	; 0x4e0 <pid_Controller+0x13c>
+ 3d2:	9f ef       	ldi	r25, 0xFF	; 255
+ 3d4:	a9 2e       	mov	r10, r25
+ 3d6:	9f e7       	ldi	r25, 0x7F	; 127
+ 3d8:	b9 2e       	mov	r11, r25
+ 3da:	c1 2c       	mov	r12, r1
+ 3dc:	d1 2c       	mov	r13, r1
+	} else {
+		p_term = pid_st->P_Factor * error;
+	}
+
+	// Calculate Iterm and limit integral runaway
+	temp = pid_st->sumError + error;
+ 3de:	7a 01       	movw	r14, r20
+ 3e0:	00 27       	eor	r16, r16
+ 3e2:	f7 fc       	sbrc	r15, 7
+ 3e4:	00 95       	com	r16
+ 3e6:	10 2f       	mov	r17, r16
+ 3e8:	8a 81       	ldd	r24, Y+2	; 0x02
+ 3ea:	9b 81       	ldd	r25, Y+3	; 0x03
+ 3ec:	ac 81       	ldd	r26, Y+4	; 0x04
+ 3ee:	bd 81       	ldd	r27, Y+5	; 0x05
+ 3f0:	e8 0e       	add	r14, r24
+ 3f2:	f9 1e       	adc	r15, r25
+ 3f4:	0a 1f       	adc	r16, r26
+ 3f6:	1b 1f       	adc	r17, r27
+	if (temp > pid_st->maxSumError) {
+ 3f8:	8e 85       	ldd	r24, Y+14	; 0x0e
+ 3fa:	9f 85       	ldd	r25, Y+15	; 0x0f
+ 3fc:	a8 89       	ldd	r26, Y+16	; 0x10
+ 3fe:	b9 89       	ldd	r27, Y+17	; 0x11
+ 400:	8e 15       	cp	r24, r14
+ 402:	9f 05       	cpc	r25, r15
+ 404:	a0 07       	cpc	r26, r16
+ 406:	b1 07       	cpc	r27, r17
+ 408:	0c f0       	brlt	.+2      	; 0x40c <pid_Controller+0x68>
+ 40a:	55 c0       	rjmp	.+170    	; 0x4b6 <pid_Controller+0x112>
+		i_term = (INT32_MAX / 2);
+		pid_st->sumError = pid_st->maxSumError;
+ 40c:	8a 83       	std	Y+2, r24	; 0x02
+ 40e:	9b 83       	std	Y+3, r25	; 0x03
+ 410:	ac 83       	std	Y+4, r26	; 0x04
+ 412:	bd 83       	std	Y+5, r27	; 0x05
+ 414:	4f ef       	ldi	r20, 0xFF	; 255
+ 416:	5f ef       	ldi	r21, 0xFF	; 255
+ 418:	6f ef       	ldi	r22, 0xFF	; 255
+ 41a:	7f e3       	ldi	r23, 0x3F	; 63
+		pid_st->sumError = temp;
+		i_term = pid_st->I_Factor * pid_st->sumError;
+	}
+
+	// Calculate Dterm
+	d_term = pid_st->D_Factor * (pid_st->lastProcessValue - processValue);
+ 41c:	88 81       	ld	r24, Y
+ 41e:	99 81       	ldd	r25, Y+1	; 0x01
+ 420:	88 19       	sub	r24, r8
+ 422:	99 09       	sbc	r25, r9
+ 424:	2a 85       	ldd	r18, Y+10	; 0x0a
+ 426:	3b 85       	ldd	r19, Y+11	; 0x0b
+ 428:	fc 01       	movw	r30, r24
+ 42a:	e2 9f       	mul	r30, r18
+ 42c:	c0 01       	movw	r24, r0
+ 42e:	e3 9f       	mul	r30, r19
+ 430:	90 0d       	add	r25, r0
+ 432:	f2 9f       	mul	r31, r18
+ 434:	90 0d       	add	r25, r0
+ 436:	11 24       	eor	r1, r1
+
+	pid_st->lastProcessValue = processValue;
+ 438:	99 82       	std	Y+1, r9	; 0x01
+ 43a:	88 82       	st	Y, r8
+
+	ret = (p_term + i_term + d_term) / SCALING_FACTOR;
+ 43c:	aa 27       	eor	r26, r26
+ 43e:	97 fd       	sbrc	r25, 7
+ 440:	a0 95       	com	r26
+ 442:	ba 2f       	mov	r27, r26
+ 444:	a8 0e       	add	r10, r24
+ 446:	b9 1e       	adc	r11, r25
+ 448:	ca 1e       	adc	r12, r26
+ 44a:	db 1e       	adc	r13, r27
+ 44c:	a4 0e       	add	r10, r20
+ 44e:	b5 1e       	adc	r11, r21
+ 450:	c6 1e       	adc	r12, r22
+ 452:	d7 1e       	adc	r13, r23
+ 454:	c6 01       	movw	r24, r12
+ 456:	b5 01       	movw	r22, r10
+ 458:	20 e8       	ldi	r18, 0x80	; 128
+ 45a:	30 e0       	ldi	r19, 0x00	; 0
+ 45c:	40 e0       	ldi	r20, 0x00	; 0
+ 45e:	50 e0       	ldi	r21, 0x00	; 0
+ 460:	5d d4       	rcall	.+2234   	; 0xd1c <__divmodsi4>
+ 462:	c9 01       	movw	r24, r18
+ 464:	da 01       	movw	r26, r20
+ 466:	81 30       	cpi	r24, 0x01	; 1
+ 468:	f0 e8       	ldi	r31, 0x80	; 128
+ 46a:	9f 07       	cpc	r25, r31
+ 46c:	ff ef       	ldi	r31, 0xFF	; 255
+ 46e:	af 07       	cpc	r26, r31
+ 470:	ff ef       	ldi	r31, 0xFF	; 255
+ 472:	bf 07       	cpc	r27, r31
+ 474:	24 f4       	brge	.+8      	; 0x47e <pid_Controller+0xda>
+ 476:	81 e0       	ldi	r24, 0x01	; 1
+ 478:	90 e8       	ldi	r25, 0x80	; 128
+ 47a:	af ef       	ldi	r26, 0xFF	; 255
+ 47c:	bf ef       	ldi	r27, 0xFF	; 255
+ 47e:	9c 01       	movw	r18, r24
+ 480:	ad 01       	movw	r20, r26
+ 482:	20 30       	cpi	r18, 0x00	; 0
+ 484:	80 e8       	ldi	r24, 0x80	; 128
+ 486:	38 07       	cpc	r19, r24
+ 488:	80 e0       	ldi	r24, 0x00	; 0
+ 48a:	48 07       	cpc	r20, r24
+ 48c:	80 e0       	ldi	r24, 0x00	; 0
+ 48e:	58 07       	cpc	r21, r24
+ 490:	24 f0       	brlt	.+8      	; 0x49a <pid_Controller+0xf6>
+ 492:	2f ef       	ldi	r18, 0xFF	; 255
+ 494:	3f e7       	ldi	r19, 0x7F	; 127
+ 496:	40 e0       	ldi	r20, 0x00	; 0
+ 498:	50 e0       	ldi	r21, 0x00	; 0
+	} else if (ret < -INT16_MAX) {
+		ret = -INT16_MAX;
+	}
+
+	return ((int16_t) ret);
+}
+ 49a:	c9 01       	movw	r24, r18
+ 49c:	df 91       	pop	r29
+ 49e:	cf 91       	pop	r28
+ 4a0:	1f 91       	pop	r17
+ 4a2:	0f 91       	pop	r16
+ 4a4:	ff 90       	pop	r15
+ 4a6:	ef 90       	pop	r14
+ 4a8:	df 90       	pop	r13
+ 4aa:	cf 90       	pop	r12
+ 4ac:	bf 90       	pop	r11
+ 4ae:	af 90       	pop	r10
+ 4b0:	9f 90       	pop	r9
+ 4b2:	8f 90       	pop	r8
+ 4b4:	08 95       	ret
+	// Calculate Iterm and limit integral runaway
+	temp = pid_st->sumError + error;
+	if (temp > pid_st->maxSumError) {
+		i_term = (INT32_MAX / 2);
+		pid_st->sumError = pid_st->maxSumError;
+	} else if (temp < -pid_st->maxSumError) {
+ 4b6:	22 27       	eor	r18, r18
+ 4b8:	33 27       	eor	r19, r19
+ 4ba:	a9 01       	movw	r20, r18
+ 4bc:	28 1b       	sub	r18, r24
+ 4be:	39 0b       	sbc	r19, r25
+ 4c0:	4a 0b       	sbc	r20, r26
+ 4c2:	5b 0b       	sbc	r21, r27
+ 4c4:	e2 16       	cp	r14, r18
+ 4c6:	f3 06       	cpc	r15, r19
+ 4c8:	04 07       	cpc	r16, r20
+ 4ca:	15 07       	cpc	r17, r21
+ 4cc:	4c f5       	brge	.+82     	; 0x520 <pid_Controller+0x17c>
+		i_term = -(INT32_MAX / 2);
+		pid_st->sumError = -pid_st->maxSumError;
+ 4ce:	2a 83       	std	Y+2, r18	; 0x02
+ 4d0:	3b 83       	std	Y+3, r19	; 0x03
+ 4d2:	4c 83       	std	Y+4, r20	; 0x04
+ 4d4:	5d 83       	std	Y+5, r21	; 0x05
+ 4d6:	41 e0       	ldi	r20, 0x01	; 1
+ 4d8:	50 e0       	ldi	r21, 0x00	; 0
+ 4da:	60 e0       	ldi	r22, 0x00	; 0
+ 4dc:	70 ec       	ldi	r23, 0xC0	; 192
+ 4de:	9e cf       	rjmp	.-196    	; 0x41c <pid_Controller+0x78>
+	error = setPoint - processValue;
+
+	// Calculate Pterm and limit error overflow
+	if (error > pid_st->maxError) {
+		p_term = INT16_MAX;
+	} else if (error < -pid_st->maxError) {
+ 4e0:	88 27       	eor	r24, r24
+ 4e2:	99 27       	eor	r25, r25
+ 4e4:	82 1b       	sub	r24, r18
+ 4e6:	93 0b       	sbc	r25, r19
+ 4e8:	48 17       	cp	r20, r24
+ 4ea:	59 07       	cpc	r21, r25
+ 4ec:	4c f4       	brge	.+18     	; 0x500 <pid_Controller+0x15c>
+ 4ee:	81 e0       	ldi	r24, 0x01	; 1
+ 4f0:	a8 2e       	mov	r10, r24
+ 4f2:	80 e8       	ldi	r24, 0x80	; 128
+ 4f4:	b8 2e       	mov	r11, r24
+ 4f6:	8f ef       	ldi	r24, 0xFF	; 255
+ 4f8:	c8 2e       	mov	r12, r24
+ 4fa:	8f ef       	ldi	r24, 0xFF	; 255
+ 4fc:	d8 2e       	mov	r13, r24
+ 4fe:	6f cf       	rjmp	.-290    	; 0x3de <pid_Controller+0x3a>
+ 500:	8e 81       	ldd	r24, Y+6	; 0x06
+ 502:	9f 81       	ldd	r25, Y+7	; 0x07
+ 504:	9c 01       	movw	r18, r24
+ 506:	42 9f       	mul	r20, r18
+ 508:	c0 01       	movw	r24, r0
+ 50a:	43 9f       	mul	r20, r19
+ 50c:	90 0d       	add	r25, r0
+ 50e:	52 9f       	mul	r21, r18
+ 510:	90 0d       	add	r25, r0
+ 512:	11 24       	eor	r1, r1
+ 514:	5c 01       	movw	r10, r24
+ 516:	cc 24       	eor	r12, r12
+ 518:	b7 fc       	sbrc	r11, 7
+ 51a:	c0 94       	com	r12
+ 51c:	dc 2c       	mov	r13, r12
+ 51e:	5f cf       	rjmp	.-322    	; 0x3de <pid_Controller+0x3a>
+		pid_st->sumError = pid_st->maxSumError;
+	} else if (temp < -pid_st->maxSumError) {
+		i_term = -(INT32_MAX / 2);
+		pid_st->sumError = -pid_st->maxSumError;
+	} else {
+		pid_st->sumError = temp;
+ 520:	ea 82       	std	Y+2, r14	; 0x02
+ 522:	fb 82       	std	Y+3, r15	; 0x03
+ 524:	0c 83       	std	Y+4, r16	; 0x04
+ 526:	1d 83       	std	Y+5, r17	; 0x05
+		i_term = pid_st->I_Factor * pid_st->sumError;
+ 528:	28 85       	ldd	r18, Y+8	; 0x08
+ 52a:	39 85       	ldd	r19, Y+9	; 0x09
+ 52c:	44 27       	eor	r20, r20
+ 52e:	37 fd       	sbrc	r19, 7
+ 530:	40 95       	com	r20
+ 532:	54 2f       	mov	r21, r20
+ 534:	c8 01       	movw	r24, r16
+ 536:	b7 01       	movw	r22, r14
+ 538:	bf d3       	rcall	.+1918   	; 0xcb8 <__mulsi3>
+ 53a:	ab 01       	movw	r20, r22
+ 53c:	bc 01       	movw	r22, r24
+ 53e:	6e cf       	rjmp	.-292    	; 0x41c <pid_Controller+0x78>
+
+00000540 <pid_Reset_Integrator>:
+/*! \brief Resets the integrator.
+ *
+ *  Calling this function will reset the integrator in the PID regulator.
+ */
+void pid_Reset_Integrator(pidData_t *pid_st) {
+	pid_st->sumError = 0;
+ 540:	fc 01       	movw	r30, r24
+ 542:	12 82       	std	Z+2, r1	; 0x02
+ 544:	13 82       	std	Z+3, r1	; 0x03
+ 546:	14 82       	std	Z+4, r1	; 0x04
+ 548:	15 82       	std	Z+5, r1	; 0x05
+}
+ 54a:	08 95       	ret
+
+0000054c <switch_init>:
+#define SWITCH_DDR  DDRC
+#define SWITCH_PIN  PC1
+
+
+void switch_init(void){
+	SWITCH_DDR &= ~(1 << SWITCH_PIN);
+ 54c:	39 98       	cbi	0x07, 1	; 7
+}
+ 54e:	08 95       	ret
+
+00000550 <switch_get_state>:
+
+state_t switch_get_state(void){
+	return (SWITCH_IN & (1 << SWITCH_PIN)) ? ON : OFF;
+ 550:	86 b1       	in	r24, 0x06	; 6
+ 552:	90 e0       	ldi	r25, 0x00	; 0
+ 554:	96 95       	lsr	r25
+ 556:	87 95       	ror	r24
+}
+ 558:	81 70       	andi	r24, 0x01	; 1
+ 55a:	08 95       	ret
+
+0000055c <time_init>:
+#include <util/atomic.h>
+
+static volatile uint16_t time;
+
+void time_init(void) {
+	TCCR1A = 0;
+ 55c:	10 92 80 00 	sts	0x0080, r1
+	TCCR1B = 1 << CS10;
+ 560:	81 e0       	ldi	r24, 0x01	; 1
+ 562:	80 93 81 00 	sts	0x0081, r24
+	TIMSK1 = 1 << TOIE1;
+ 566:	80 93 6f 00 	sts	0x006F, r24
+}
+ 56a:	08 95       	ret
+
+0000056c <time_get>:
+
+time_t time_get(void) {
+ 56c:	df 93       	push	r29
+ 56e:	cf 93       	push	r28
+ 570:	00 d0       	rcall	.+0      	; 0x572 <time_get+0x6>
+ 572:	cd b7       	in	r28, 0x3d	; 61
+ 574:	de b7       	in	r29, 0x3e	; 62
+	typeof(time) high;
+	uint16_t low;
+
+	ATOMIC_BLOCK(ATOMIC_RESTORESTATE) {
+ 576:	2f b7       	in	r18, 0x3f	; 63
+    return 1;
+}
+
+static __inline__ uint8_t __iCliRetVal(void)
+{
+    cli();
+ 578:	f8 94       	cli
+		high = time;
+ 57a:	80 91 b4 01 	lds	r24, 0x01B4
+ 57e:	90 91 b5 01 	lds	r25, 0x01B5
+ 582:	9a 83       	std	Y+2, r25	; 0x02
+ 584:	89 83       	std	Y+1, r24	; 0x01
+		low = TCNT1;
+ 586:	80 91 84 00 	lds	r24, 0x0084
+ 58a:	90 91 85 00 	lds	r25, 0x0085
+    (void)__s;
+}
+
+static __inline__ void __iRestore(const  uint8_t *__s)
+{
+    SREG = *__s;
+ 58e:	2f bf       	out	0x3f, r18	; 63
+	}
+
+	return ((time_t)high << 16) | low;
+ 590:	29 81       	ldd	r18, Y+1	; 0x01
+ 592:	3a 81       	ldd	r19, Y+2	; 0x02
+ 594:	40 e0       	ldi	r20, 0x00	; 0
+ 596:	50 e0       	ldi	r21, 0x00	; 0
+ 598:	a9 01       	movw	r20, r18
+ 59a:	33 27       	eor	r19, r19
+ 59c:	22 27       	eor	r18, r18
+ 59e:	a0 e0       	ldi	r26, 0x00	; 0
+ 5a0:	b0 e0       	ldi	r27, 0x00	; 0
+ 5a2:	28 2b       	or	r18, r24
+ 5a4:	39 2b       	or	r19, r25
+ 5a6:	4a 2b       	or	r20, r26
+ 5a8:	5b 2b       	or	r21, r27
+}
+ 5aa:	b9 01       	movw	r22, r18
+ 5ac:	ca 01       	movw	r24, r20
+ 5ae:	0f 90       	pop	r0
+ 5b0:	0f 90       	pop	r0
+ 5b2:	cf 91       	pop	r28
+ 5b4:	df 91       	pop	r29
+ 5b6:	08 95       	ret
+
+000005b8 <time_get_diff>:
+
+time_t time_get_diff(time_t old) {
+ 5b8:	ef 92       	push	r14
+ 5ba:	ff 92       	push	r15
+ 5bc:	0f 93       	push	r16
+ 5be:	1f 93       	push	r17
+ 5c0:	7b 01       	movw	r14, r22
+ 5c2:	8c 01       	movw	r16, r24
+	return time_get() - old;
+ 5c4:	d3 df       	rcall	.-90     	; 0x56c <time_get>
+ 5c6:	9b 01       	movw	r18, r22
+ 5c8:	ac 01       	movw	r20, r24
+ 5ca:	2e 19       	sub	r18, r14
+ 5cc:	3f 09       	sbc	r19, r15
+ 5ce:	40 0b       	sbc	r20, r16
+ 5d0:	51 0b       	sbc	r21, r17
+}
+ 5d2:	b9 01       	movw	r22, r18
+ 5d4:	ca 01       	movw	r24, r20
+ 5d6:	1f 91       	pop	r17
+ 5d8:	0f 91       	pop	r16
+ 5da:	ff 90       	pop	r15
+ 5dc:	ef 90       	pop	r14
+ 5de:	08 95       	ret
+
+000005e0 <__vector_15>:
+
+
+ISR(TIMER1_OVF_vect) {
+ 5e0:	1f 92       	push	r1
+ 5e2:	0f 92       	push	r0
+ 5e4:	0f b6       	in	r0, 0x3f	; 63
+ 5e6:	0f 92       	push	r0
+ 5e8:	11 24       	eor	r1, r1
+ 5ea:	8f 93       	push	r24
+ 5ec:	9f 93       	push	r25
+	time++;
+ 5ee:	80 91 b4 01 	lds	r24, 0x01B4
+ 5f2:	90 91 b5 01 	lds	r25, 0x01B5
+ 5f6:	01 96       	adiw	r24, 0x01	; 1
+ 5f8:	90 93 b5 01 	sts	0x01B5, r25
+ 5fc:	80 93 b4 01 	sts	0x01B4, r24
+}
+ 600:	9f 91       	pop	r25
+ 602:	8f 91       	pop	r24
+ 604:	0f 90       	pop	r0
+ 606:	0f be       	out	0x3f, r0	; 63
+ 608:	0f 90       	pop	r0
+ 60a:	1f 90       	pop	r1
+ 60c:	18 95       	reti
+
+0000060e <uart_init>:
+static FILE mystdout = FDEV_SETUP_STREAM(&uart_stdio_putchar, NULL, _FDEV_SETUP_WRITE);
+static FILE mystdin  = FDEV_SETUP_STREAM(NULL, &uart_stdio_getchar, _FDEV_SETUP_READ);
+
+void uart_init(void) {
+    /* Set baud rate */
+    UBRRH = UBRRH_VALUE;
+ 60e:	10 92 c5 00 	sts	0x00C5, r1
+    UBRRL = UBRRL_VALUE;
+ 612:	82 e2       	ldi	r24, 0x22	; 34
+ 614:	80 93 c4 00 	sts	0x00C4, r24
+    /* Clear TXC and set/clear double speed mode */
+    UCSRA = (1<<TXC) | (USE_2X<<U2X);
+ 618:	82 e4       	ldi	r24, 0x42	; 66
+ 61a:	80 93 c0 00 	sts	0x00C0, r24
+    /* Set frame format: 8data, no parity & 1 stop bit */
+    UCSRC = (1<<UCSZ1) | (1<<UCSZ0);
+ 61e:	86 e0       	ldi	r24, 0x06	; 6
+ 620:	80 93 c2 00 	sts	0x00C2, r24
+    /* Enable receiver and transmitter */
+    UCSRB = (1<<RXEN) | (1<<TXEN);
+ 624:	88 e1       	ldi	r24, 0x18	; 24
+ 626:	80 93 c1 00 	sts	0x00C1, r24
+
+    stdout = &mystdout;
+ 62a:	83 e1       	ldi	r24, 0x13	; 19
+ 62c:	91 e0       	ldi	r25, 0x01	; 1
+ 62e:	90 93 c7 01 	sts	0x01C7, r25
+ 632:	80 93 c6 01 	sts	0x01C6, r24
+    stdin  = &mystdin;
+ 636:	81 e2       	ldi	r24, 0x21	; 33
+ 638:	91 e0       	ldi	r25, 0x01	; 1
+ 63a:	90 93 c5 01 	sts	0x01C5, r25
+ 63e:	80 93 c4 01 	sts	0x01C4, r24
+}
+ 642:	08 95       	ret
+
+00000644 <uart_stdio_putchar>:
+
+static int uart_stdio_putchar(char c, FILE *stream) {
+ 644:	1f 93       	push	r17
+ 646:	18 2f       	mov	r17, r24
+	if (c == '\n')
+ 648:	8a 30       	cpi	r24, 0x0A	; 10
+ 64a:	51 f0       	breq	.+20     	; 0x660 <uart_stdio_putchar+0x1c>
+#include <avr/io.h>
+#include <avr/pgmspace.h>
+#include <util/setbaud.h>
+
+inline bool uart_isTXempty(void) {
+    return (UCSRA & (1<<UDRE)) ? true : false;
+ 64c:	80 91 c0 00 	lds	r24, 0x00C0
+		uart_stdio_putchar('\r', stream);
+    /* Wait for empty transmit buffer */
+    while (false == uart_isTXempty())
+ 650:	85 ff       	sbrs	r24, 5
+ 652:	fc cf       	rjmp	.-8      	; 0x64c <uart_stdio_putchar+0x8>
+        ;
+	UDR = c;
+ 654:	10 93 c6 00 	sts	0x00C6, r17
+	return 0;
+}
+ 658:	80 e0       	ldi	r24, 0x00	; 0
+ 65a:	90 e0       	ldi	r25, 0x00	; 0
+ 65c:	1f 91       	pop	r17
+ 65e:	08 95       	ret
+    stdin  = &mystdin;
+}
+
+static int uart_stdio_putchar(char c, FILE *stream) {
+	if (c == '\n')
+		uart_stdio_putchar('\r', stream);
+ 660:	8d e0       	ldi	r24, 0x0D	; 13
+ 662:	f0 df       	rcall	.-32     	; 0x644 <uart_stdio_putchar>
+ 664:	f3 cf       	rjmp	.-26     	; 0x64c <uart_stdio_putchar+0x8>
+
+00000666 <uart_stdio_getchar>:
+}
+
+inline bool uart_isRXempty(void) {
+    return (UCSRA & (1<<RXC)) ? false : true;
+ 666:	80 91 c0 00 	lds	r24, 0x00C0
+	return 0;
+}
+
+static int uart_stdio_getchar(FILE *stream) {
+    /* Wait for data to be received */
+    while (true == uart_isRXempty())
+ 66a:	87 ff       	sbrs	r24, 7
+ 66c:	fc cf       	rjmp	.-8      	; 0x666 <uart_stdio_getchar>
+        ;
+    /* Get and return received data from buffer */
+    return UDR;
+ 66e:	80 91 c6 00 	lds	r24, 0x00C6
+}
+ 672:	90 e0       	ldi	r25, 0x00	; 0
+ 674:	08 95       	ret
+
+00000676 <uart_puts_P>:
+
+#ifndef DEBUG
+void uart_puts_P(const prog_char * string) {
+ 676:	cf 93       	push	r28
+ 678:	df 93       	push	r29
+ 67a:	fc 01       	movw	r30, r24
+    uint8_t tmp;
+    tmp = pgm_read_byte(string++);
+ 67c:	84 91       	lpm	r24, Z+
+    while (tmp != '\0') {
+ 67e:	88 23       	and	r24, r24
+ 680:	51 f0       	breq	.+20     	; 0x696 <uart_puts_P+0x20>
+}
+
+#ifndef DEBUG
+void uart_puts_P(const prog_char * string) {
+    uint8_t tmp;
+    tmp = pgm_read_byte(string++);
+ 682:	ef 01       	movw	r28, r30
+ 684:	21 96       	adiw	r28, 0x01	; 1
+    while (tmp != '\0') {
+    	uart_stdio_putchar(tmp, NULL);
+ 686:	60 e0       	ldi	r22, 0x00	; 0
+ 688:	70 e0       	ldi	r23, 0x00	; 0
+ 68a:	dc df       	rcall	.-72     	; 0x644 <uart_stdio_putchar>
+ 68c:	fe 01       	movw	r30, r28
+        tmp = pgm_read_byte(string++);
+ 68e:	21 96       	adiw	r28, 0x01	; 1
+ 690:	84 91       	lpm	r24, Z+
+
+#ifndef DEBUG
+void uart_puts_P(const prog_char * string) {
+    uint8_t tmp;
+    tmp = pgm_read_byte(string++);
+    while (tmp != '\0') {
+ 692:	88 23       	and	r24, r24
+ 694:	c1 f7       	brne	.-16     	; 0x686 <uart_puts_P+0x10>
+    	uart_stdio_putchar(tmp, NULL);
+        tmp = pgm_read_byte(string++);
+    }
+    uart_stdio_putchar('\n', NULL);
+ 696:	8a e0       	ldi	r24, 0x0A	; 10
+ 698:	60 e0       	ldi	r22, 0x00	; 0
+ 69a:	70 e0       	ldi	r23, 0x00	; 0
+ 69c:	d3 df       	rcall	.-90     	; 0x644 <uart_stdio_putchar>
+}
+ 69e:	df 91       	pop	r29
+ 6a0:	cf 91       	pop	r28
+ 6a2:	08 95       	ret
+
+000006a4 <uart_puthex>:
+
+void uart_puthex(char d) {
+ 6a4:	ff 92       	push	r15
+ 6a6:	0f 93       	push	r16
+ 6a8:	1f 93       	push	r17
+ 6aa:	f8 2e       	mov	r15, r24
+	static const char dtox_lookup[16] = "0123456789ABCDEF";
+	uart_stdio_putchar(dtox_lookup[d >> 4], NULL);
+ 6ac:	82 95       	swap	r24
+ 6ae:	8f 70       	andi	r24, 0x0F	; 15
+ 6b0:	03 e0       	ldi	r16, 0x03	; 3
+ 6b2:	11 e0       	ldi	r17, 0x01	; 1
+ 6b4:	f8 01       	movw	r30, r16
+ 6b6:	e8 0f       	add	r30, r24
+ 6b8:	f1 1d       	adc	r31, r1
+ 6ba:	80 81       	ld	r24, Z
+ 6bc:	60 e0       	ldi	r22, 0x00	; 0
+ 6be:	70 e0       	ldi	r23, 0x00	; 0
+ 6c0:	c1 df       	rcall	.-126    	; 0x644 <uart_stdio_putchar>
+	uart_stdio_putchar(dtox_lookup[d & 0x0f], NULL);
+ 6c2:	8f e0       	ldi	r24, 0x0F	; 15
+ 6c4:	f8 22       	and	r15, r24
+ 6c6:	0f 0d       	add	r16, r15
+ 6c8:	11 1d       	adc	r17, r1
+ 6ca:	f8 01       	movw	r30, r16
+ 6cc:	80 81       	ld	r24, Z
+ 6ce:	60 e0       	ldi	r22, 0x00	; 0
+ 6d0:	70 e0       	ldi	r23, 0x00	; 0
+ 6d2:	b8 df       	rcall	.-144    	; 0x644 <uart_stdio_putchar>
+}
+ 6d4:	1f 91       	pop	r17
+ 6d6:	0f 91       	pop	r16
+ 6d8:	ff 90       	pop	r15
+ 6da:	08 95       	ret
+
+000006dc <uart_putx>:
+
+void uart_putx(uint16_t d) {
+ 6dc:	1f 93       	push	r17
+ 6de:	18 2f       	mov	r17, r24
+	uart_puthex((char)(d >> 8));
+ 6e0:	89 2f       	mov	r24, r25
+ 6e2:	e0 df       	rcall	.-64     	; 0x6a4 <uart_puthex>
+	uart_puthex(((char)d & 0x00FF));
+ 6e4:	81 2f       	mov	r24, r17
+ 6e6:	de df       	rcall	.-68     	; 0x6a4 <uart_puthex>
+}
+ 6e8:	1f 91       	pop	r17
+ 6ea:	08 95       	ret
+
+000006ec <SVPWM>:
+ * Ts = MAX_PWM
+ * Vx is at most Vmax * sqrt(3)/2
+ * Vx is a requested size of voltage (a size of requested vector)
+ * so the "amp" can be in range 0...MAX_PWM
+ */
+void SVPWM(uint16_t amp, uint8_t angle_increment, pwm_t *pwm) {
+ 6ec:	0f 93       	push	r16
+ 6ee:	1f 93       	push	r17
+ 6f0:	cf 93       	push	r28
+ 6f2:	df 93       	push	r29
+ 6f4:	ec 01       	movw	r28, r24
+ 6f6:	8a 01       	movw	r16, r20
+	static uint8_t  angle = 0; /* angle in "tab_sin" units */
+	uint16_t        tau1, tau2;
+	uint16_t        val1, val2_1, val3, val2_2;
+
+	/* Angle increment is too big */
+	assert(angle_increment <= ANGLE_INCREMENT_MAX);
+ 6f8:	67 30       	cpi	r22, 0x07	; 7
+ 6fa:	08 f0       	brcs	.+2      	; 0x6fe <SVPWM+0x12>
+ 6fc:	d0 c0       	rjmp	.+416    	; 0x89e <SVPWM+0x1b2>
+	/* Amplitude is too big */
+	assert(amp <= MAX_PWM);
+ 6fe:	88 e0       	ldi	r24, 0x08	; 8
+ 700:	c1 30       	cpi	r28, 0x01	; 1
+ 702:	d8 07       	cpc	r29, r24
+ 704:	08 f0       	brcs	.+2      	; 0x708 <SVPWM+0x1c>
+ 706:	ce c0       	rjmp	.+412    	; 0x8a4 <SVPWM+0x1b8>
+	/* Data type of "angle" is too small for angle computation */
+	cassert(MAX_VALUE(angle) >= MAX_ANGLE + ANGLE_INCREMENT_MAX);
+	/* If not fulfilled, 1 sector can be skipped. Current algorithm can't handle it. */
+	cassert(MAX_ANGLE >= ANGLE_INCREMENT_MAX);
+
+	angle += angle_increment;
+ 708:	a0 91 b6 01 	lds	r26, 0x01B6
+ 70c:	a6 0f       	add	r26, r22
+ 70e:	a0 93 b6 01 	sts	0x01B6, r26
+
+	if (angle > MAX_ANGLE) {
+ 712:	ad 37       	cpi	r26, 0x7D	; 125
+ 714:	08 f0       	brcs	.+2      	; 0x718 <SVPWM+0x2c>
+ 716:	55 c0       	rjmp	.+170    	; 0x7c2 <SVPWM+0xd6>
+	//tau2 = ((uint32_t)amp * tab_sin[angle]) / TAB_SIN_SCALE;
+
+	/* faster */
+	/* call MultiUU16X8toH16 to multiply amp and tab_sin and take high 16bits to divide it by 256 */
+	cassert(TAB_SIN_SCALE == 256);
+	MultiUU16X8toH16(tau1, amp, tab_sin[MAX_ANGLE - angle]);
+ 718:	b0 e0       	ldi	r27, 0x00	; 0
+ 71a:	ec ea       	ldi	r30, 0xAC	; 172
+ 71c:	f1 e0       	ldi	r31, 0x01	; 1
+ 71e:	ea 1b       	sub	r30, r26
+ 720:	fb 0b       	sbc	r31, r27
+ 722:	80 81       	ld	r24, Z
+ 724:	d8 9f       	mul	r29, r24
+ 726:	a0 01       	movw	r20, r0
+ 728:	c8 9f       	mul	r28, r24
+ 72a:	41 0d       	add	r20, r1
+ 72c:	11 24       	eor	r1, r1
+ 72e:	51 1d       	adc	r21, r1
+	MultiUU16X8toH16(tau2, amp, tab_sin[angle]);
+ 730:	a0 5d       	subi	r26, 0xD0	; 208
+ 732:	be 4f       	sbci	r27, 0xFE	; 254
+ 734:	8c 91       	ld	r24, X
+ 736:	d8 9f       	mul	r29, r24
+ 738:	90 01       	movw	r18, r0
+ 73a:	c8 9f       	mul	r28, r24
+ 73c:	21 0d       	add	r18, r1
+ 73e:	11 24       	eor	r1, r1
+ 740:	31 1d       	adc	r19, r1
+	 *	 val0 = (MAX_PWM - t1 - t2) / 2
+	 *   val1 = (MAX_PWM + t1 - t2) / 2
+	 *   val2 = (MAX_PWM + t1 + t2) / 2
+	 */
+
+	assert(tau1 + tau2 <= MAX_PWM);
+ 742:	f9 01       	movw	r30, r18
+ 744:	e4 0f       	add	r30, r20
+ 746:	f5 1f       	adc	r31, r21
+ 748:	a8 e0       	ldi	r26, 0x08	; 8
+ 74a:	e1 30       	cpi	r30, 0x01	; 1
+ 74c:	fa 07       	cpc	r31, r26
+ 74e:	08 f0       	brcs	.+2      	; 0x752 <SVPWM+0x66>
+ 750:	ac c0       	rjmp	.+344    	; 0x8aa <SVPWM+0x1be>
+	val1   = (MAX_PWM - tau1 - tau2) / 2;
+ 752:	66 27       	eor	r22, r22
+ 754:	77 27       	eor	r23, r23
+ 756:	64 1b       	sub	r22, r20
+ 758:	75 0b       	sbc	r23, r21
+ 75a:	62 1b       	sub	r22, r18
+ 75c:	73 0b       	sbc	r23, r19
+ 75e:	60 50       	subi	r22, 0x00	; 0
+ 760:	78 4f       	sbci	r23, 0xF8	; 248
+ 762:	76 95       	lsr	r23
+ 764:	67 95       	ror	r22
+	val2_1 = (MAX_PWM + tau1 - tau2) / 2;
+ 766:	ca 01       	movw	r24, r20
+ 768:	80 50       	subi	r24, 0x00	; 0
+ 76a:	98 4f       	sbci	r25, 0xF8	; 248
+ 76c:	82 1b       	sub	r24, r18
+ 76e:	93 0b       	sbc	r25, r19
+ 770:	96 95       	lsr	r25
+ 772:	87 95       	ror	r24
+	val2_2 = (MAX_PWM - tau1 + tau2) / 2;
+ 774:	20 50       	subi	r18, 0x00	; 0
+ 776:	38 4f       	sbci	r19, 0xF8	; 248
+ 778:	24 1b       	sub	r18, r20
+ 77a:	35 0b       	sbc	r19, r21
+ 77c:	36 95       	lsr	r19
+ 77e:	27 95       	ror	r18
+	val3   = (MAX_PWM + tau1 + tau2) / 2;
+ 780:	e0 50       	subi	r30, 0x00	; 0
+ 782:	f8 4f       	sbci	r31, 0xF8	; 248
+ 784:	f6 95       	lsr	r31
+ 786:	e7 95       	ror	r30
+
+	switch (sector_number) {
+ 788:	40 91 2f 01 	lds	r20, 0x012F
+ 78c:	43 30       	cpi	r20, 0x03	; 3
+ 78e:	09 f4       	brne	.+2      	; 0x792 <SVPWM+0xa6>
+ 790:	53 c0       	rjmp	.+166    	; 0x838 <SVPWM+0x14c>
+ 792:	44 30       	cpi	r20, 0x04	; 4
+ 794:	28 f1       	brcs	.+74     	; 0x7e0 <SVPWM+0xf4>
+ 796:	45 30       	cpi	r20, 0x05	; 5
+ 798:	09 f4       	brne	.+2      	; 0x79c <SVPWM+0xb0>
+ 79a:	5f c0       	rjmp	.+190    	; 0x85a <SVPWM+0x16e>
+ 79c:	45 30       	cpi	r20, 0x05	; 5
+ 79e:	40 f5       	brcc	.+80     	; 0x7f0 <SVPWM+0x104>
+		 * MAX_PWM ------------+
+		 *
+		 * but t1 is now t2 and t2 is t1
+		 *
+		 */
+		pwm->pwm0 = val3;
+ 7a0:	d8 01       	movw	r26, r16
+ 7a2:	11 96       	adiw	r26, 0x01	; 1
+ 7a4:	fc 93       	st	X, r31
+ 7a6:	ee 93       	st	-X, r30
+		pwm->pwm1 = val2_2;
+ 7a8:	13 96       	adiw	r26, 0x03	; 3
+ 7aa:	3c 93       	st	X, r19
+ 7ac:	2e 93       	st	-X, r18
+ 7ae:	12 97       	sbiw	r26, 0x02	; 2
+		pwm->pwm2 = val1;
+ 7b0:	15 96       	adiw	r26, 0x05	; 5
+ 7b2:	7c 93       	st	X, r23
+ 7b4:	6e 93       	st	-X, r22
+ 7b6:	14 97       	sbiw	r26, 0x04	; 4
+		break;
+	default:
+		assert(0);
+		break;
+	}
+}
+ 7b8:	df 91       	pop	r29
+ 7ba:	cf 91       	pop	r28
+ 7bc:	1f 91       	pop	r17
+ 7be:	0f 91       	pop	r16
+ 7c0:	08 95       	ret
+	cassert(MAX_ANGLE >= ANGLE_INCREMENT_MAX);
+
+	angle += angle_increment;
+
+	if (angle > MAX_ANGLE) {
+		angle -= MAX_ANGLE;
+ 7c2:	ac 57       	subi	r26, 0x7C	; 124
+ 7c4:	a0 93 b6 01 	sts	0x01B6, r26
+		sector_number++;
+ 7c8:	80 91 2f 01 	lds	r24, 0x012F
+ 7cc:	8f 5f       	subi	r24, 0xFF	; 255
+ 7ce:	80 93 2f 01 	sts	0x012F, r24
+
+		if (sector_number > 6) {
+ 7d2:	87 30       	cpi	r24, 0x07	; 7
+ 7d4:	08 f4       	brcc	.+2      	; 0x7d8 <SVPWM+0xec>
+ 7d6:	a0 cf       	rjmp	.-192    	; 0x718 <SVPWM+0x2c>
+			sector_number = 1;
+ 7d8:	81 e0       	ldi	r24, 0x01	; 1
+ 7da:	80 93 2f 01 	sts	0x012F, r24
+ 7de:	9c cf       	rjmp	.-200    	; 0x718 <SVPWM+0x2c>
+	val1   = (MAX_PWM - tau1 - tau2) / 2;
+	val2_1 = (MAX_PWM + tau1 - tau2) / 2;
+	val2_2 = (MAX_PWM - tau1 + tau2) / 2;
+	val3   = (MAX_PWM + tau1 + tau2) / 2;
+
+	switch (sector_number) {
+ 7e0:	41 30       	cpi	r20, 0x01	; 1
+ 7e2:	09 f4       	brne	.+2      	; 0x7e6 <SVPWM+0xfa>
+ 7e4:	4b c0       	rjmp	.+150    	; 0x87c <SVPWM+0x190>
+ 7e6:	42 30       	cpi	r20, 0x02	; 2
+ 7e8:	b1 f0       	breq	.+44     	; 0x816 <SVPWM+0x12a>
+		pwm->pwm0 = val1;
+		pwm->pwm1 = val3;
+		pwm->pwm2 = val2_2;
+		break;
+	default:
+		assert(0);
+ 7ea:	82 ee       	ldi	r24, 0xE2	; 226
+ 7ec:	90 e0       	ldi	r25, 0x00	; 0
+ 7ee:	fe dc       	rcall	.-1540   	; 0x1ec <assert_handle>
+	val1   = (MAX_PWM - tau1 - tau2) / 2;
+	val2_1 = (MAX_PWM + tau1 - tau2) / 2;
+	val2_2 = (MAX_PWM - tau1 + tau2) / 2;
+	val3   = (MAX_PWM + tau1 + tau2) / 2;
+
+	switch (sector_number) {
+ 7f0:	46 30       	cpi	r20, 0x06	; 6
+ 7f2:	d9 f7       	brne	.-10     	; 0x7ea <SVPWM+0xfe>
+		 * MAX_PWM ------------+
+		 *
+		 * but t1 is now t2 and t2 is t1
+		 *
+		 */
+		pwm->pwm0 = val1;
+ 7f4:	d8 01       	movw	r26, r16
+ 7f6:	11 96       	adiw	r26, 0x01	; 1
+ 7f8:	7c 93       	st	X, r23
+ 7fa:	6e 93       	st	-X, r22
+		pwm->pwm1 = val3;
+ 7fc:	13 96       	adiw	r26, 0x03	; 3
+ 7fe:	fc 93       	st	X, r31
+ 800:	ee 93       	st	-X, r30
+ 802:	12 97       	sbiw	r26, 0x02	; 2
+		pwm->pwm2 = val2_2;
+ 804:	15 96       	adiw	r26, 0x05	; 5
+ 806:	3c 93       	st	X, r19
+ 808:	2e 93       	st	-X, r18
+ 80a:	14 97       	sbiw	r26, 0x04	; 4
+		break;
+	default:
+		assert(0);
+		break;
+	}
+}
+ 80c:	df 91       	pop	r29
+ 80e:	cf 91       	pop	r28
+ 810:	1f 91       	pop	r17
+ 812:	0f 91       	pop	r16
+ 814:	08 95       	ret
+		 *     val2 --------+  |
+		 * MAX_PWM ------------+
+		 *
+		 * but t1 is now t2 and t2 is t1
+		 */
+		pwm->pwm0 = val2_2;
+ 816:	d8 01       	movw	r26, r16
+ 818:	11 96       	adiw	r26, 0x01	; 1
+ 81a:	3c 93       	st	X, r19
+ 81c:	2e 93       	st	-X, r18
+		pwm->pwm1 = val1;
+ 81e:	13 96       	adiw	r26, 0x03	; 3
+ 820:	7c 93       	st	X, r23
+ 822:	6e 93       	st	-X, r22
+ 824:	12 97       	sbiw	r26, 0x02	; 2
+		pwm->pwm2 = val3;
+ 826:	15 96       	adiw	r26, 0x05	; 5
+ 828:	fc 93       	st	X, r31
+ 82a:	ee 93       	st	-X, r30
+ 82c:	14 97       	sbiw	r26, 0x04	; 4
+		break;
+	default:
+		assert(0);
+		break;
+	}
+}
+ 82e:	df 91       	pop	r29
+ 830:	cf 91       	pop	r28
+ 832:	1f 91       	pop	r17
+ 834:	0f 91       	pop	r16
+ 836:	08 95       	ret
+		 * MAX_PWM ------------+
+		 *
+		 * t1 = tau1
+		 * t2 = tau2
+		 */
+		pwm->pwm0 = val3;
+ 838:	d8 01       	movw	r26, r16
+ 83a:	11 96       	adiw	r26, 0x01	; 1
+ 83c:	fc 93       	st	X, r31
+ 83e:	ee 93       	st	-X, r30
+		pwm->pwm1 = val1;
+ 840:	13 96       	adiw	r26, 0x03	; 3
+ 842:	7c 93       	st	X, r23
+ 844:	6e 93       	st	-X, r22
+ 846:	12 97       	sbiw	r26, 0x02	; 2
+		pwm->pwm2 = val2_1;
+ 848:	15 96       	adiw	r26, 0x05	; 5
+ 84a:	9c 93       	st	X, r25
+ 84c:	8e 93       	st	-X, r24
+ 84e:	14 97       	sbiw	r26, 0x04	; 4
+		break;
+	default:
+		assert(0);
+		break;
+	}
+}
+ 850:	df 91       	pop	r29
+ 852:	cf 91       	pop	r28
+ 854:	1f 91       	pop	r17
+ 856:	0f 91       	pop	r16
+ 858:	08 95       	ret
+		 * MAX_PWM ------------+
+		 *
+		 * t1 = tau1
+		 * t2 = tau2
+		 */
+		pwm->pwm0 = val2_1;
+ 85a:	d8 01       	movw	r26, r16
+ 85c:	11 96       	adiw	r26, 0x01	; 1
+ 85e:	9c 93       	st	X, r25
+ 860:	8e 93       	st	-X, r24
+		pwm->pwm1 = val3;
+ 862:	13 96       	adiw	r26, 0x03	; 3
+ 864:	fc 93       	st	X, r31
+ 866:	ee 93       	st	-X, r30
+ 868:	12 97       	sbiw	r26, 0x02	; 2
+		pwm->pwm2 = val1;
+ 86a:	15 96       	adiw	r26, 0x05	; 5
+ 86c:	7c 93       	st	X, r23
+ 86e:	6e 93       	st	-X, r22
+ 870:	14 97       	sbiw	r26, 0x04	; 4
+		break;
+	default:
+		assert(0);
+		break;
+	}
+}
+ 872:	df 91       	pop	r29
+ 874:	cf 91       	pop	r28
+ 876:	1f 91       	pop	r17
+ 878:	0f 91       	pop	r16
+ 87a:	08 95       	ret
+		 * MAX_PWM ------------+
+		 *
+		 * t1 = tau1
+		 * t2 = tau2
+		 */
+		pwm->pwm0 = val1;
+ 87c:	d8 01       	movw	r26, r16
+ 87e:	11 96       	adiw	r26, 0x01	; 1
+ 880:	7c 93       	st	X, r23
+ 882:	6e 93       	st	-X, r22
+		pwm->pwm1 = val2_1;
+ 884:	13 96       	adiw	r26, 0x03	; 3
+ 886:	9c 93       	st	X, r25
+ 888:	8e 93       	st	-X, r24
+ 88a:	12 97       	sbiw	r26, 0x02	; 2
+		pwm->pwm2 = val3;
+ 88c:	15 96       	adiw	r26, 0x05	; 5
+ 88e:	fc 93       	st	X, r31
+ 890:	ee 93       	st	-X, r30
+ 892:	14 97       	sbiw	r26, 0x04	; 4
+		break;
+	default:
+		assert(0);
+		break;
+	}
+}
+ 894:	df 91       	pop	r29
+ 896:	cf 91       	pop	r28
+ 898:	1f 91       	pop	r17
+ 89a:	0f 91       	pop	r16
+ 89c:	08 95       	ret
+	static uint8_t  angle = 0; /* angle in "tab_sin" units */
+	uint16_t        tau1, tau2;
+	uint16_t        val1, val2_1, val3, val2_2;
+
+	/* Angle increment is too big */
+	assert(angle_increment <= ANGLE_INCREMENT_MAX);
+ 89e:	81 e2       	ldi	r24, 0x21	; 33
+ 8a0:	90 e0       	ldi	r25, 0x00	; 0
+ 8a2:	a4 dc       	rcall	.-1720   	; 0x1ec <assert_handle>
+	/* Amplitude is too big */
+	assert(amp <= MAX_PWM);
+ 8a4:	83 e2       	ldi	r24, 0x23	; 35
+ 8a6:	90 e0       	ldi	r25, 0x00	; 0
+ 8a8:	a1 dc       	rcall	.-1726   	; 0x1ec <assert_handle>
+	 *	 val0 = (MAX_PWM - t1 - t2) / 2
+	 *   val1 = (MAX_PWM + t1 - t2) / 2
+	 *   val2 = (MAX_PWM + t1 + t2) / 2
+	 */
+
+	assert(tau1 + tau2 <= MAX_PWM);
+ 8aa:	89 e6       	ldi	r24, 0x69	; 105
+ 8ac:	90 e0       	ldi	r25, 0x00	; 0
+ 8ae:	9e dc       	rcall	.-1732   	; 0x1ec <assert_handle>
+
+000008b0 <psc_init>:
+ * Center Aligned Mode
+ *
+ * PLL should be already started (we drive MCU clock from PLL output)
+ */
+void psc_init(uint16_t pwm_max_value, uint8_t dead_time) {
+	deadtime = dead_time;
+ 8b0:	60 93 b7 01 	sts	0x01B7, r22
+
+	/* set PLL output to 64Mhz */
+	PLLCSR |= 1 << PLLF;
+ 8b4:	29 b5       	in	r18, 0x29	; 41
+ 8b6:	24 60       	ori	r18, 0x04	; 4
+ 8b8:	29 bd       	out	0x29, r18	; 41
+	assert_soft((PLLCSR & 0x07) == 0x07); /* locked, started and 64Mhz */
+
+	assert_soft((1 << 12) > pwm_max_value + deadtime);
+	OCR0RB = pwm_max_value + deadtime;
+ 8ba:	86 0f       	add	r24, r22
+ 8bc:	91 1d       	adc	r25, r1
+ 8be:	90 93 d9 00 	sts	0x00D9, r25
+ 8c2:	80 93 d8 00 	sts	0x00D8, r24
+	OCR1RB = pwm_max_value + deadtime;
+ 8c6:	90 93 e9 00 	sts	0x00E9, r25
+ 8ca:	80 93 e8 00 	sts	0x00E8, r24
+	OCR2RB = pwm_max_value + deadtime;
+ 8ce:	90 93 f9 00 	sts	0x00F9, r25
+ 8d2:	80 93 f8 00 	sts	0x00F8, r24
+
+	/* Center Aligned Mode, fast clock input, Output Polarity: active LOW. */
+	PCNF0 = (1 << PMODE01) | (1 << PMODE00) | (1 << PCLKSEL0);
+ 8d6:	8a e1       	ldi	r24, 0x1A	; 26
+ 8d8:	80 93 da 00 	sts	0x00DA, r24
+	PCNF1 = (1 << PMODE11) | (1 << PMODE10) | (1 << PCLKSEL1);
+ 8dc:	80 93 ea 00 	sts	0x00EA, r24
+	PCNF2 = (1 << PMODE21) | (1 << PMODE20) | (1 << PCLKSEL2);
+ 8e0:	80 93 fa 00 	sts	0x00FA, r24
+
+	/* PSC0 and PSC1 as slave, PSC2 as master */
+	PCTL0 = 1 << PARUN0;
+ 8e4:	84 e0       	ldi	r24, 0x04	; 4
+ 8e6:	80 93 db 00 	sts	0x00DB, r24
+	PCTL1 = 1 << PARUN1;
+ 8ea:	80 93 eb 00 	sts	0x00EB, r24
+	PCTL2 = 1 << PRUN2;
+ 8ee:	81 e0       	ldi	r24, 0x01	; 1
+ 8f0:	80 93 fb 00 	sts	0x00FB, r24
+
+	/* PSC2 interrupt at the end of cycle enable */
+	PIM2 = 1 << PEOPE2;
+ 8f4:	80 93 a5 00 	sts	0x00A5, r24
+
+	// connect the PSC waveform generator outputs to the port outputs
+	PSOC0 = (1 << POEN0B) | (1 << POEN0A);
+ 8f8:	85 e0       	ldi	r24, 0x05	; 5
+ 8fa:	80 93 d0 00 	sts	0x00D0, r24
+	PSOC1 = (1 << POEN1B) | (1 << POEN1A);
+ 8fe:	80 93 e0 00 	sts	0x00E0, r24
+	PSOC2 = (1 << POEN2B) | (1 << POEN2A);
+ 902:	80 93 f0 00 	sts	0x00F0, r24
+}
+ 906:	08 95       	ret
+
+00000908 <psc_halt>:
+
+void psc_halt(void) {
+	PSOC0 &= ~((1 << POEN0B) | (1 << POEN0A));
+ 908:	e0 ed       	ldi	r30, 0xD0	; 208
+ 90a:	f0 e0       	ldi	r31, 0x00	; 0
+ 90c:	80 81       	ld	r24, Z
+ 90e:	8a 7f       	andi	r24, 0xFA	; 250
+ 910:	80 83       	st	Z, r24
+	PSOC1 &= ~((1 << POEN1B) | (1 << POEN1A));
+ 912:	e0 ee       	ldi	r30, 0xE0	; 224
+ 914:	f0 e0       	ldi	r31, 0x00	; 0
+ 916:	80 81       	ld	r24, Z
+ 918:	8a 7f       	andi	r24, 0xFA	; 250
+ 91a:	80 83       	st	Z, r24
+	PSOC2 &= ~((1 << POEN2B) | (1 << POEN2A));
+ 91c:	e0 ef       	ldi	r30, 0xF0	; 240
+ 91e:	f0 e0       	ldi	r31, 0x00	; 0
+ 920:	80 81       	ld	r24, Z
+ 922:	8a 7f       	andi	r24, 0xFA	; 250
+ 924:	80 83       	st	Z, r24
+}
+ 926:	08 95       	ret
+
+00000928 <psc_load>:
+
+/* Load the PSC 0, 1 and 2 with new values */
+void psc_load(uint16_t time0, uint16_t time1, uint16_t time2) {
+ 928:	cf 93       	push	r28
+ 92a:	df 93       	push	r29
+ 92c:	ec 01       	movw	r28, r24
+	/* slow */
+	//	PCNF0 |= 1 << PLOCK0;
+	//	PCNF1 |= 1 << PLOCK1;
+	//	PCNF2 |= 1 << PLOCK2;
+	/* faster */
+	set_bit(PCNF0, PLOCK0);
+ 92e:	80 91 da 00 	lds	r24, 0x00DA
+ 932:	80 62       	ori	r24, 0x20	; 32
+ 934:	80 93 da 00 	sts	0x00DA, r24
+	set_bit(PCNF1, PLOCK1);
+ 938:	80 91 ea 00 	lds	r24, 0x00EA
+ 93c:	80 62       	ori	r24, 0x20	; 32
+ 93e:	80 93 ea 00 	sts	0x00EA, r24
+	set_bit(PCNF2, PLOCK2);
+ 942:	80 91 fa 00 	lds	r24, 0x00FA
+ 946:	80 62       	ori	r24, 0x20	; 32
+ 948:	80 93 fa 00 	sts	0x00FA, r24
+
+	assert(OCR0RB >= time0 + deadtime);
+ 94c:	20 91 d8 00 	lds	r18, 0x00D8
+ 950:	30 91 d9 00 	lds	r19, 0x00D9
+ 954:	80 91 b7 01 	lds	r24, 0x01B7
+ 958:	a8 2f       	mov	r26, r24
+ 95a:	b0 e0       	ldi	r27, 0x00	; 0
+ 95c:	fe 01       	movw	r30, r28
+ 95e:	ea 0f       	add	r30, r26
+ 960:	fb 1f       	adc	r31, r27
+ 962:	2e 17       	cp	r18, r30
+ 964:	3f 07       	cpc	r19, r31
+ 966:	08 f4       	brcc	.+2      	; 0x96a <psc_load+0x42>
+ 968:	3e c0       	rjmp	.+124    	; 0x9e6 <psc_load+0xbe>
+	OCR0SA = time0;
+ 96a:	d0 93 d3 00 	sts	0x00D3, r29
+ 96e:	c0 93 d2 00 	sts	0x00D2, r28
+	OCR0SB = time0 + deadtime;
+ 972:	f0 93 d7 00 	sts	0x00D7, r31
+ 976:	e0 93 d6 00 	sts	0x00D6, r30
+
+	assert(OCR1RB >= time1 + deadtime);
+ 97a:	80 91 e8 00 	lds	r24, 0x00E8
+ 97e:	90 91 e9 00 	lds	r25, 0x00E9
+ 982:	9b 01       	movw	r18, r22
+ 984:	2a 0f       	add	r18, r26
+ 986:	3b 1f       	adc	r19, r27
+ 988:	82 17       	cp	r24, r18
+ 98a:	93 07       	cpc	r25, r19
+ 98c:	78 f1       	brcs	.+94     	; 0x9ec <psc_load+0xc4>
+	OCR1SA = time1;
+ 98e:	70 93 e3 00 	sts	0x00E3, r23
+ 992:	60 93 e2 00 	sts	0x00E2, r22
+	OCR1SB = time1 + deadtime;
+ 996:	30 93 e7 00 	sts	0x00E7, r19
+ 99a:	20 93 e6 00 	sts	0x00E6, r18
+
+	assert(OCR2RB >= time2 + deadtime);
+ 99e:	80 91 f8 00 	lds	r24, 0x00F8
+ 9a2:	90 91 f9 00 	lds	r25, 0x00F9
+ 9a6:	9a 01       	movw	r18, r20
+ 9a8:	2a 0f       	add	r18, r26
+ 9aa:	3b 1f       	adc	r19, r27
+ 9ac:	82 17       	cp	r24, r18
+ 9ae:	93 07       	cpc	r25, r19
+ 9b0:	00 f1       	brcs	.+64     	; 0x9f2 <psc_load+0xca>
+	OCR2SA = time2;
+ 9b2:	50 93 f3 00 	sts	0x00F3, r21
+ 9b6:	40 93 f2 00 	sts	0x00F2, r20
+	OCR2SB = time2 + deadtime;
+ 9ba:	30 93 f7 00 	sts	0x00F7, r19
+ 9be:	20 93 f6 00 	sts	0x00F6, r18
+	/* slow */
+	//	PCNF0 &= ~(1 << PLOCK0);
+	//	PCNF1 &= ~(1 << PLOCK1);
+	//	PCNF2 &= ~(1 << PLOCK2);
+	/* faster */
+	clr_bit(PCNF0, PLOCK0);
+ 9c2:	80 91 da 00 	lds	r24, 0x00DA
+ 9c6:	8f 7d       	andi	r24, 0xDF	; 223
+ 9c8:	80 93 da 00 	sts	0x00DA, r24
+	clr_bit(PCNF1, PLOCK1);
+ 9cc:	80 91 ea 00 	lds	r24, 0x00EA
+ 9d0:	8f 7d       	andi	r24, 0xDF	; 223
+ 9d2:	80 93 ea 00 	sts	0x00EA, r24
+	clr_bit(PCNF2, PLOCK2);
+ 9d6:	80 91 fa 00 	lds	r24, 0x00FA
+ 9da:	8f 7d       	andi	r24, 0xDF	; 223
+ 9dc:	80 93 fa 00 	sts	0x00FA, r24
+}
+ 9e0:	df 91       	pop	r29
+ 9e2:	cf 91       	pop	r28
+ 9e4:	08 95       	ret
+	/* faster */
+	set_bit(PCNF0, PLOCK0);
+	set_bit(PCNF1, PLOCK1);
+	set_bit(PCNF2, PLOCK2);
+
+	assert(OCR0RB >= time0 + deadtime);
+ 9e6:	8f e3       	ldi	r24, 0x3F	; 63
+ 9e8:	90 e0       	ldi	r25, 0x00	; 0
+ 9ea:	00 dc       	rcall	.-2048   	; 0x1ec <assert_handle>
+	OCR0SA = time0;
+	OCR0SB = time0 + deadtime;
+
+	assert(OCR1RB >= time1 + deadtime);
+ 9ec:	83 e4       	ldi	r24, 0x43	; 67
+ 9ee:	90 e0       	ldi	r25, 0x00	; 0
+ 9f0:	fd db       	rcall	.-2054   	; 0x1ec <assert_handle>
+	OCR1SA = time1;
+	OCR1SB = time1 + deadtime;
+
+	assert(OCR2RB >= time2 + deadtime);
+ 9f2:	87 e4       	ldi	r24, 0x47	; 71
+ 9f4:	90 e0       	ldi	r25, 0x00	; 0
+ 9f6:	fa db       	rcall	.-2060   	; 0x1ec <assert_handle>
+
+000009f8 <vector_set_new_speed>:
+ 9f8:	2f b7       	in	r18, 0x3f	; 63
+ 9fa:	f8 94       	cli
+ 9fc:	90 93 bd 01 	sts	0x01BD, r25
+ a00:	80 93 bc 01 	sts	0x01BC, r24
+ a04:	70 93 bb 01 	sts	0x01BB, r23
+ a08:	60 93 ba 01 	sts	0x01BA, r22
+ a0c:	40 93 be 01 	sts	0x01BE, r20
+ a10:	2f bf       	out	0x3f, r18	; 63
+ a12:	08 95       	ret
+
+00000a14 <__vector_2>:
+	}
+}
+
+/* PSC2 end cycle interrupt handle
+ * New vector of magnetization will be calculated and set to PSC in this routine. */
+ISR(PSC2_EC_vect) {
+ a14:	1f 92       	push	r1
+ a16:	0f 92       	push	r0
+ a18:	0f b6       	in	r0, 0x3f	; 63
+ a1a:	0f 92       	push	r0
+ a1c:	11 24       	eor	r1, r1
+ a1e:	1f 93       	push	r17
+ a20:	2f 93       	push	r18
+ a22:	3f 93       	push	r19
+ a24:	4f 93       	push	r20
+ a26:	5f 93       	push	r21
+ a28:	6f 93       	push	r22
+ a2a:	7f 93       	push	r23
+ a2c:	8f 93       	push	r24
+ a2e:	9f 93       	push	r25
+ a30:	af 93       	push	r26
+ a32:	bf 93       	push	r27
+ a34:	ef 93       	push	r30
+ a36:	ff 93       	push	r31
+ a38:	df 93       	push	r29
+ a3a:	cf 93       	push	r28
+ a3c:	00 d0       	rcall	.+0      	; 0xa3e <__vector_2+0x2a>
+ a3e:	00 d0       	rcall	.+0      	; 0xa40 <__vector_2+0x2c>
+ a40:	00 d0       	rcall	.+0      	; 0xa42 <__vector_2+0x2e>
+ a42:	cd b7       	in	r28, 0x3d	; 61
+ a44:	de b7       	in	r29, 0x3e	; 62
+	uint8_t  angle_units; /* in sin's table "degrees" (units)*/
+	pwm_t    pwm;
+
+	/* Prevent overflow */
+	cassert(MAX_VALUE(angle_integrator_scaled) >= (ANGLE_INCREMENT_MAX + 1) * ANGLE_SCALE);
+	angle_integrator_scaled += angle_increment_scaled;
+ a46:	60 91 ba 01 	lds	r22, 0x01BA
+ a4a:	70 91 bb 01 	lds	r23, 0x01BB
+ a4e:	80 91 b8 01 	lds	r24, 0x01B8
+ a52:	90 91 b9 01 	lds	r25, 0x01B9
+ a56:	68 0f       	add	r22, r24
+ a58:	79 1f       	adc	r23, r25
+ a5a:	70 93 b9 01 	sts	0x01B9, r23
+ a5e:	60 93 b8 01 	sts	0x01B8, r22
+
+	/* angle_units type is big enough to contain the result
+	 * MAX_VALUE(angle_units) >= ((ANGLE_INCREMENT_MAX + 1) * ANGLE_SCALE / ANGLE_SCALE) */
+	cassert(MAX_VALUE(angle_units) >= ANGLE_INCREMENT_MAX + 1);
+	angle_units = angle_integrator_scaled / ANGLE_SCALE;
+ a62:	17 2f       	mov	r17, r23
+
+	if (angle_units) {
+ a64:	77 23       	and	r23, r23
+ a66:	d9 f4       	brne	.+54     	; 0xa9e <__vector_2+0x8a>
+
+		angle_integrator_scaled -= (uint16_t)angle_units * ANGLE_SCALE;
+	}
+
+	/* test that we are fast enough */
+	assert((PIFR2 & (1 << PEOP2)) == 0);
+ a68:	80 91 a4 00 	lds	r24, 0x00A4
+ a6c:	80 fd       	sbrc	r24, 0
+ a6e:	45 c0       	rjmp	.+138    	; 0xafa <__vector_2+0xe6>
+}
+ a70:	26 96       	adiw	r28, 0x06	; 6
+ a72:	de bf       	out	0x3e, r29	; 62
+ a74:	cd bf       	out	0x3d, r28	; 61
+ a76:	cf 91       	pop	r28
+ a78:	df 91       	pop	r29
+ a7a:	ff 91       	pop	r31
+ a7c:	ef 91       	pop	r30
+ a7e:	bf 91       	pop	r27
+ a80:	af 91       	pop	r26
+ a82:	9f 91       	pop	r25
+ a84:	8f 91       	pop	r24
+ a86:	7f 91       	pop	r23
+ a88:	6f 91       	pop	r22
+ a8a:	5f 91       	pop	r21
+ a8c:	4f 91       	pop	r20
+ a8e:	3f 91       	pop	r19
+ a90:	2f 91       	pop	r18
+ a92:	1f 91       	pop	r17
+ a94:	0f 90       	pop	r0
+ a96:	0f be       	out	0x3f, r0	; 63
+ a98:	0f 90       	pop	r0
+ a9a:	1f 90       	pop	r1
+ a9c:	18 95       	reti
+	cassert(MAX_VALUE(angle_units) >= ANGLE_INCREMENT_MAX + 1);
+	angle_units = angle_integrator_scaled / ANGLE_SCALE;
+
+	if (angle_units) {
+		// ------------- space vector PWN algorithm -----------------
+		SVPWM(amplitude, angle_units, &pwm);
+ a9e:	80 91 bc 01 	lds	r24, 0x01BC
+ aa2:	90 91 bd 01 	lds	r25, 0x01BD
+ aa6:	67 2f       	mov	r22, r23
+ aa8:	ae 01       	movw	r20, r28
+ aaa:	4f 5f       	subi	r20, 0xFF	; 255
+ aac:	5f 4f       	sbci	r21, 0xFF	; 255
+ aae:	1e de       	rcall	.-964    	; 0x6ec <SVPWM>
+
+#		include "../dac.h" /* TODO */
+		dac_set_value_scaled(pwm.pwm1, MAX_PWM); /* TODO */
+ ab0:	8b 81       	ldd	r24, Y+3	; 0x03
+ ab2:	9c 81       	ldd	r25, Y+4	; 0x04
+ ab4:	60 e0       	ldi	r22, 0x00	; 0
+ ab6:	78 e0       	ldi	r23, 0x08	; 8
+ ab8:	c3 db       	rcall	.-2170   	; 0x240 <dac_set_value_scaled>
+
+		// -------- load the PSCs with the new duty cycles -----------
+		if (direction == FORWARD) {
+ aba:	80 91 be 01 	lds	r24, 0x01BE
+ abe:	88 23       	and	r24, r24
+ ac0:	a1 f0       	breq	.+40     	; 0xaea <__vector_2+0xd6>
+			psc_load(pwm.pwm0, pwm.pwm1, pwm.pwm2);
+		} else {
+			psc_load(pwm.pwm0, pwm.pwm2, pwm.pwm1);
+ ac2:	6d 81       	ldd	r22, Y+5	; 0x05
+ ac4:	7e 81       	ldd	r23, Y+6	; 0x06
+ ac6:	4b 81       	ldd	r20, Y+3	; 0x03
+ ac8:	5c 81       	ldd	r21, Y+4	; 0x04
+ aca:	89 81       	ldd	r24, Y+1	; 0x01
+ acc:	9a 81       	ldd	r25, Y+2	; 0x02
+ ace:	2c df       	rcall	.-424    	; 0x928 <psc_load>
+		}
+
+		angle_integrator_scaled -= (uint16_t)angle_units * ANGLE_SCALE;
+ ad0:	31 2f       	mov	r19, r17
+ ad2:	20 e0       	ldi	r18, 0x00	; 0
+ ad4:	80 91 b8 01 	lds	r24, 0x01B8
+ ad8:	90 91 b9 01 	lds	r25, 0x01B9
+ adc:	82 1b       	sub	r24, r18
+ ade:	93 0b       	sbc	r25, r19
+ ae0:	90 93 b9 01 	sts	0x01B9, r25
+ ae4:	80 93 b8 01 	sts	0x01B8, r24
+ ae8:	bf cf       	rjmp	.-130    	; 0xa68 <__vector_2+0x54>
+#		include "../dac.h" /* TODO */
+		dac_set_value_scaled(pwm.pwm1, MAX_PWM); /* TODO */
+
+		// -------- load the PSCs with the new duty cycles -----------
+		if (direction == FORWARD) {
+			psc_load(pwm.pwm0, pwm.pwm1, pwm.pwm2);
+ aea:	6b 81       	ldd	r22, Y+3	; 0x03
+ aec:	7c 81       	ldd	r23, Y+4	; 0x04
+ aee:	4d 81       	ldd	r20, Y+5	; 0x05
+ af0:	5e 81       	ldd	r21, Y+6	; 0x06
+ af2:	89 81       	ldd	r24, Y+1	; 0x01
+ af4:	9a 81       	ldd	r25, Y+2	; 0x02
+ af6:	18 df       	rcall	.-464    	; 0x928 <psc_load>
+ af8:	eb cf       	rjmp	.-42     	; 0xad0 <__vector_2+0xbc>
+
+		angle_integrator_scaled -= (uint16_t)angle_units * ANGLE_SCALE;
+	}
+
+	/* test that we are fast enough */
+	assert((PIFR2 & (1 << PEOP2)) == 0);
+ afa:	8e e3       	ldi	r24, 0x3E	; 62
+ afc:	90 e0       	ldi	r25, 0x00	; 0
+ afe:	76 db       	rcall	.-2324   	; 0x1ec <assert_handle>
+
+00000b00 <controlVF>:
+	cassert((uint32_t)ANGLE_INCREMENT_50hz_SCALED * Vf_SLOPE
+			<= (uint32_t)MAX_VALUE(angle_increment_scaled));
+	/* we will cast it to 8bit */
+	cassert(Vf_SLOPE <= UINT8_MAX);
+
+	if (angle_increment_scaled <= ANGLE_INCREMENT_MIN_SCALED) {
+ b00:	8e 33       	cpi	r24, 0x3E	; 62
+ b02:	91 05       	cpc	r25, r1
+ b04:	c0 f0       	brcs	.+48     	; 0xb36 <controlVF+0x36>
+		/* boost frequency */
+		amplitude = AMPLITUDE_MIN; /* boost voltage */
+	} else if (angle_increment_scaled >= ANGLE_INCREMENT_50hz_SCALED) {
+ b06:	22 e0       	ldi	r18, 0x02	; 2
+ b08:	86 36       	cpi	r24, 0x66	; 102
+ b0a:	92 07       	cpc	r25, r18
+ b0c:	80 f4       	brcc	.+32     	; 0xb2e <controlVF+0x2e>
+		amplitude = AMPLITUDE_MAX; /* rated value */
+	} else { /* V/f law */
+		/* slow */
+		/* amplitude = (angle_increment_scaled * (uint8_t)Vf_SLOPE) / CONTROL_VF_SLOPE_SCALE; */
+		/* faster */
+		MultiUU16XConst8toL16(amplitude, angle_increment_scaled, Vf_SLOPE);
+ b0e:	6a e6       	ldi	r22, 0x6A	; 106
+ b10:	86 9f       	mul	r24, r22
+ b12:	90 01       	movw	r18, r0
+ b14:	96 9f       	mul	r25, r22
+ b16:	30 0d       	add	r19, r0
+ b18:	11 24       	eor	r1, r1
+		amplitude /= CONTROL_VF_SLOPE_SCALE;
+ b1a:	36 95       	lsr	r19
+ b1c:	27 95       	ror	r18
+ b1e:	32 95       	swap	r19
+ b20:	22 95       	swap	r18
+ b22:	2f 70       	andi	r18, 0x0F	; 15
+ b24:	23 27       	eor	r18, r19
+ b26:	3f 70       	andi	r19, 0x0F	; 15
+ b28:	23 27       	eor	r18, r19
+	}
+
+	return amplitude;
+}
+ b2a:	c9 01       	movw	r24, r18
+ b2c:	08 95       	ret
+	cassert(Vf_SLOPE <= UINT8_MAX);
+
+	if (angle_increment_scaled <= ANGLE_INCREMENT_MIN_SCALED) {
+		/* boost frequency */
+		amplitude = AMPLITUDE_MIN; /* boost voltage */
+	} else if (angle_increment_scaled >= ANGLE_INCREMENT_50hz_SCALED) {
+ b2e:	20 e0       	ldi	r18, 0x00	; 0
+ b30:	38 e0       	ldi	r19, 0x08	; 8
+		MultiUU16XConst8toL16(amplitude, angle_increment_scaled, Vf_SLOPE);
+		amplitude /= CONTROL_VF_SLOPE_SCALE;
+	}
+
+	return amplitude;
+}
+ b32:	c9 01       	movw	r24, r18
+ b34:	08 95       	ret
+	cassert((uint32_t)ANGLE_INCREMENT_50hz_SCALED * Vf_SLOPE
+			<= (uint32_t)MAX_VALUE(angle_increment_scaled));
+	/* we will cast it to 8bit */
+	cassert(Vf_SLOPE <= UINT8_MAX);
+
+	if (angle_increment_scaled <= ANGLE_INCREMENT_MIN_SCALED) {
+ b36:	2a ec       	ldi	r18, 0xCA	; 202
+ b38:	30 e0       	ldi	r19, 0x00	; 0
+		MultiUU16XConst8toL16(amplitude, angle_increment_scaled, Vf_SLOPE);
+		amplitude /= CONTROL_VF_SLOPE_SCALE;
+	}
+
+	return amplitude;
+}
+ b3a:	c9 01       	movw	r24, r18
+ b3c:	08 95       	ret
+
+00000b3e <current_limitation>:
+#include "current_limitation.h"
+#include "../adc.h"
+#include "../config.h"
+
+int16_t current_limitation(int16_t real_speed, int16_t command) {
+ b3e:	cb 01       	movw	r24, r22
+//		return command - ((command - real_speed) / (CURRENT_MAX - CURRENT_TRESHOLD));
+//	} else {
+//		return real_speed;
+//	}
+	return command;
+}
+ b40:	08 95       	ret
+
+00000b42 <dummy_get_real_speed>:
+ b42:	80 e0       	ldi	r24, 0x00	; 0
+ b44:	90 e0       	ldi	r25, 0x00	; 0
+ b46:	08 95       	ret
+
+00000b48 <dummy_get_requested_speed>:
+ *   -1 = backward F_MAX/COMMAND_MAX hz
+ *  511 = forward  F_MAX hz
+ * -512 = backward F_MAX + F_MAX/COMMAND_MAX hz
+ * */
+int16_t dummy_get_requested_speed(void) {
+	return adc_get_speed_pot_value();
+ b48:	b2 da       	rcall	.-2716   	; 0xae <adc_get_speed_pot_value>
+}
+ b4a:	08 95       	ret
+
+00000b4c <command_reset>:
+#define COMMAND_FILTER_LEN (1UL << 16)
+
+static int32_t command;
+
+void command_reset (void) {
+	command = 0;
+ b4c:	10 92 bf 01 	sts	0x01BF, r1
+ b50:	10 92 c0 01 	sts	0x01C0, r1
+ b54:	10 92 c1 01 	sts	0x01C1, r1
+ b58:	10 92 c2 01 	sts	0x01C2, r1
+}
+ b5c:	08 95       	ret
+
+00000b5e <command_get_old_value>:
+
+
+int16_t command_get_old_value (void) {
+ b5e:	20 91 bf 01 	lds	r18, 0x01BF
+ b62:	30 91 c0 01 	lds	r19, 0x01C0
+ b66:	40 91 c1 01 	lds	r20, 0x01C1
+ b6a:	50 91 c2 01 	lds	r21, 0x01C2
+ b6e:	9a 01       	movw	r18, r20
+ b70:	44 27       	eor	r20, r20
+ b72:	55 27       	eor	r21, r21
+	return command / COMMAND_FILTER_LEN;
+}
+ b74:	c9 01       	movw	r24, r18
+ b76:	08 95       	ret
+
+00000b78 <command_get>:
+
+int16_t command_get(int16_t real_speed, int16_t requested_speed) {
+ b78:	ef 92       	push	r14
+ b7a:	ff 92       	push	r15
+ b7c:	0f 93       	push	r16
+ b7e:	1f 93       	push	r17
+	//command = ((512 - Omega_meas) * 20) / 10; // command with the on board pot
+	//command = request ; // command with the generated steps
+
+	//	return requested_speed;
+
+	command -= command / COMMAND_FILTER_LEN;
+ b80:	20 91 bf 01 	lds	r18, 0x01BF
+ b84:	30 91 c0 01 	lds	r19, 0x01C0
+ b88:	40 91 c1 01 	lds	r20, 0x01C1
+ b8c:	50 91 c2 01 	lds	r21, 0x01C2
+	command += requested_speed;
+ b90:	7a 01       	movw	r14, r20
+ b92:	00 27       	eor	r16, r16
+ b94:	11 27       	eor	r17, r17
+ b96:	2e 19       	sub	r18, r14
+ b98:	3f 09       	sbc	r19, r15
+ b9a:	40 0b       	sbc	r20, r16
+ b9c:	51 0b       	sbc	r21, r17
+ b9e:	88 27       	eor	r24, r24
+ ba0:	77 fd       	sbrc	r23, 7
+ ba2:	80 95       	com	r24
+ ba4:	98 2f       	mov	r25, r24
+ ba6:	26 0f       	add	r18, r22
+ ba8:	37 1f       	adc	r19, r23
+ baa:	48 1f       	adc	r20, r24
+ bac:	59 1f       	adc	r21, r25
+ bae:	20 93 bf 01 	sts	0x01BF, r18
+ bb2:	30 93 c0 01 	sts	0x01C0, r19
+ bb6:	40 93 c1 01 	sts	0x01C1, r20
+ bba:	50 93 c2 01 	sts	0x01C2, r21
+ bbe:	9a 01       	movw	r18, r20
+ bc0:	44 27       	eor	r20, r20
+ bc2:	55 27       	eor	r21, r21
+	return command / COMMAND_FILTER_LEN;
+}
+ bc4:	c9 01       	movw	r24, r18
+ bc6:	1f 91       	pop	r17
+ bc8:	0f 91       	pop	r16
+ bca:	ff 90       	pop	r15
+ bcc:	ef 90       	pop	r14
+ bce:	08 95       	ret
+
+00000bd0 <timer0_init>:
+#endif
+
+/* Timer 0 Configuration */
+void timer0_init (void) {
+	cassert(TIMER0_DIVIDER == 64);
+	TCCR0B = (1 << CS01) | (1 << CS00);  // f_quartz = 16 MHz / 64 = 250 kHz
+ bd0:	83 e0       	ldi	r24, 0x03	; 3
+ bd2:	85 bd       	out	0x25, r24	; 37
+	TCCR0A = (1 << WGM01); // mode CTC : Clear Timer on Compare
+ bd4:	92 e0       	ldi	r25, 0x02	; 2
+ bd6:	94 bd       	out	0x24, r25	; 36
+	OCR0A  = OCR0A_VAL;
+ bd8:	8f e3       	ldi	r24, 0x3F	; 63
+ bda:	87 bd       	out	0x27, r24	; 39
+	TIMSK0 = (1 << OCIE0A); // allow interruption when timer=compare
+ bdc:	90 93 6e 00 	sts	0x006E, r25
+}
+ be0:	08 95       	ret
+
+00000be2 <__vector_16>:
+ *
+ * Space vector is recalculated every: 2 * (MAX_PWM + DEADTIME) / 64Mhz =>
+ *  2 * MAX_PWM / 64Mhz +  2 * DEADTIME / 64Mhz => 66us (15.15kHz)
+ *
+ */
+ISR(TIMER0_COMPA_vect) {
+ be2:	1f 92       	push	r1
+ be4:	0f 92       	push	r0
+ be6:	0f b6       	in	r0, 0x3f	; 63
+ be8:	0f 92       	push	r0
+ bea:	11 24       	eor	r1, r1
+ bec:	ef 92       	push	r14
+ bee:	ff 92       	push	r15
+ bf0:	0f 93       	push	r16
+ bf2:	1f 93       	push	r17
+ bf4:	2f 93       	push	r18
+ bf6:	3f 93       	push	r19
+ bf8:	4f 93       	push	r20
+ bfa:	5f 93       	push	r21
+ bfc:	6f 93       	push	r22
+ bfe:	7f 93       	push	r23
+ c00:	8f 93       	push	r24
+ c02:	9f 93       	push	r25
+ c04:	af 93       	push	r26
+ c06:	bf 93       	push	r27
+ c08:	cf 93       	push	r28
+ c0a:	df 93       	push	r29
+ c0c:	ef 93       	push	r30
+ c0e:	ff 93       	push	r31
+	static volatile bool timer0_int_inprocess;
+	int16_t     command, real_speed, requested_speed;
+	uint16_t    angle_increment_scaled, amplitude;
+	direction_t direction;
+
+	assert(false == timer0_int_inprocess);
+ c10:	80 91 c3 01 	lds	r24, 0x01C3
+ c14:	88 23       	and	r24, r24
+ c16:	09 f0       	breq	.+2      	; 0xc1a <__vector_16+0x38>
+ c18:	48 c0       	rjmp	.+144    	; 0xcaa <__vector_16+0xc8>
+	timer0_int_inprocess = true;
+ c1a:	81 e0       	ldi	r24, 0x01	; 1
+ c1c:	80 93 c3 01 	sts	0x01C3, r24
+	sei(); /* enable interrupts! */
+ c20:	78 94       	sei
+
+	/* get real speed of rotor */
+	real_speed = dummy_get_real_speed();
+ c22:	8f df       	rcall	.-226    	; 0xb42 <dummy_get_real_speed>
+ c24:	8c 01       	movw	r16, r24
+	assert_soft((real_speed >= -SPEED_MAX) && (real_speed <= SPEED_MAX));
+
+	/* get requested speed from potentiometer  */
+	requested_speed = dummy_get_requested_speed();
+ c26:	90 df       	rcall	.-224    	; 0xb48 <dummy_get_requested_speed>
+ c28:	ec 01       	movw	r28, r24
+	OCR0A  = OCR0A_VAL;
+	TIMSK0 = (1 << OCIE0A); // allow interruption when timer=compare
+}
+
+static int16_t regulate(int16_t real_speed, int16_t requested_speed) {
+	uint8_t current = adc_get_current_value();
+ c2a:	67 da       	rcall	.-2866   	; 0xfa <adc_get_current_value>
+	int16_t command;
+
+	/* ------------------- regulate speed  --------------------------------- */
+	if (current > CURRENT_MAX) {
+ c2c:	8b 35       	cpi	r24, 0x5B	; 91
+ c2e:	08 f0       	brcs	.+2      	; 0xc32 <__vector_16+0x50>
+ c30:	3f c0       	rjmp	.+126    	; 0xcb0 <__vector_16+0xce>
+		command_reset();
+		command = 0;
+		assert(0); /* TODO FIXME  - break needs to be implemented, than remeve this line */
+	} else if (current > CURRENT_TRESHOLD) {
+ c32:	8d 33       	cpi	r24, 0x3D	; 61
+ c34:	80 f5       	brcc	.+96     	; 0xc96 <__vector_16+0xb4>
+		command = command_get_old_value();
+	} else {
+		command = command_get(real_speed, requested_speed);
+ c36:	c8 01       	movw	r24, r16
+ c38:	be 01       	movw	r22, r28
+ c3a:	9e df       	rcall	.-196    	; 0xb78 <command_get>
+ c3c:	ec 01       	movw	r28, r24
+	/* FIXME */
+	//cassert(ANGLE_INCREMENT_MAX_NUMERATOR % ANGLE_INCREMENT_MAX_DENOMINATOR == 0); /* prevent rounding errors */
+	/* angle_increment = command_abs * (ANGLE_INTEGRATOR_SCALE * ANGLE_INCREMENT_MAX / COMMAND_MAX); */
+	cassert((ANGLE_SCALE * ANGLE_INCREMENT_MAX / COMMAND_MAX) <= UINT8_MAX);
+
+	MultiSU16XConst8toL16(angle_increment_scaled, command_abs,
+ c3e:	9e 01       	movw	r18, r28
+ c40:	d7 fd       	sbrc	r29, 7
+ c42:	2e c0       	rjmp	.+92     	; 0xca0 <__vector_16+0xbe>
+ c44:	63 e0       	ldi	r22, 0x03	; 3
+ c46:	26 9f       	mul	r18, r22
+ c48:	80 01       	movw	r16, r0
+ c4a:	36 03       	mulsu	r19, r22
+ c4c:	10 0d       	add	r17, r0
+ c4e:	11 24       	eor	r1, r1
+	/* convert command to angle speed */
+	angle_increment_scaled = command_to_angle_increment_scaled(command);
+	assert_soft(angle_increment_scaled <= ANGLE_INCREMENT_SCALED_MAX);
+
+	/* V/f law */
+	amplitude = controlVF(angle_increment_scaled);
+ c50:	c8 01       	movw	r24, r16
+ c52:	56 df       	rcall	.-340    	; 0xb00 <controlVF>
+	assert_soft(amplitude <= AMPLITUDE_MAX);
+
+	/* set new amplitude and angle speed to SVPWM */
+	direction = (command >= 0) ? FORWARD : BACKWARD;
+	vector_set_new_speed(amplitude, angle_increment_scaled, direction);
+ c54:	7e 01       	movw	r14, r28
+ c56:	4f 2d       	mov	r20, r15
+ c58:	44 1f       	adc	r20, r20
+ c5a:	44 27       	eor	r20, r20
+ c5c:	44 1f       	adc	r20, r20
+ c5e:	b8 01       	movw	r22, r16
+ c60:	cb de       	rcall	.-618    	; 0x9f8 <vector_set_new_speed>
+#	ifdef DEBUG
+	test_freq_command = command;
+	test_amplitude = amplitude;
+#	endif
+
+	cli();
+ c62:	f8 94       	cli
+	timer0_int_inprocess = false;
+ c64:	10 92 c3 01 	sts	0x01C3, r1
+
+	/* Match Flag must be still cleared otherwise we are too slow */
+	//assert((TIFR0 & (1 << OCF0A)) == 0);
+}
+ c68:	ff 91       	pop	r31
+ c6a:	ef 91       	pop	r30
+ c6c:	df 91       	pop	r29
+ c6e:	cf 91       	pop	r28
+ c70:	bf 91       	pop	r27
+ c72:	af 91       	pop	r26
+ c74:	9f 91       	pop	r25
+ c76:	8f 91       	pop	r24
+ c78:	7f 91       	pop	r23
+ c7a:	6f 91       	pop	r22
+ c7c:	5f 91       	pop	r21
+ c7e:	4f 91       	pop	r20
+ c80:	3f 91       	pop	r19
+ c82:	2f 91       	pop	r18
+ c84:	1f 91       	pop	r17
+ c86:	0f 91       	pop	r16
+ c88:	ff 90       	pop	r15
+ c8a:	ef 90       	pop	r14
+ c8c:	0f 90       	pop	r0
+ c8e:	0f be       	out	0x3f, r0	; 63
+ c90:	0f 90       	pop	r0
+ c92:	1f 90       	pop	r1
+ c94:	18 95       	reti
+	if (current > CURRENT_MAX) {
+		command_reset();
+		command = 0;
+		assert(0); /* TODO FIXME  - break needs to be implemented, than remeve this line */
+	} else if (current > CURRENT_TRESHOLD) {
+		command = command_get_old_value();
+ c96:	63 df       	rcall	.-314    	; 0xb5e <command_get_old_value>
+ c98:	ec 01       	movw	r28, r24
+	/* FIXME */
+	//cassert(ANGLE_INCREMENT_MAX_NUMERATOR % ANGLE_INCREMENT_MAX_DENOMINATOR == 0); /* prevent rounding errors */
+	/* angle_increment = command_abs * (ANGLE_INTEGRATOR_SCALE * ANGLE_INCREMENT_MAX / COMMAND_MAX); */
+	cassert((ANGLE_SCALE * ANGLE_INCREMENT_MAX / COMMAND_MAX) <= UINT8_MAX);
+
+	MultiSU16XConst8toL16(angle_increment_scaled, command_abs,
+ c9a:	9e 01       	movw	r18, r28
+ c9c:	d7 ff       	sbrs	r29, 7
+ c9e:	d2 cf       	rjmp	.-92     	; 0xc44 <__vector_16+0x62>
+ ca0:	22 27       	eor	r18, r18
+ ca2:	33 27       	eor	r19, r19
+ ca4:	2c 1b       	sub	r18, r28
+ ca6:	3d 0b       	sbc	r19, r29
+ ca8:	cd cf       	rjmp	.-102    	; 0xc44 <__vector_16+0x62>
+	static volatile bool timer0_int_inprocess;
+	int16_t     command, real_speed, requested_speed;
+	uint16_t    angle_increment_scaled, amplitude;
+	direction_t direction;
+
+	assert(false == timer0_int_inprocess);
+ caa:	8f e5       	ldi	r24, 0x5F	; 95
+ cac:	90 e0       	ldi	r25, 0x00	; 0
+ cae:	9e da       	rcall	.-2756   	; 0x1ec <assert_handle>
+	uint8_t current = adc_get_current_value();
+	int16_t command;
+
+	/* ------------------- regulate speed  --------------------------------- */
+	if (current > CURRENT_MAX) {
+		command_reset();
+ cb0:	4d df       	rcall	.-358    	; 0xb4c <command_reset>
+		command = 0;
+		assert(0); /* TODO FIXME  - break needs to be implemented, than remeve this line */
+ cb2:	87 e2       	ldi	r24, 0x27	; 39
+ cb4:	90 e0       	ldi	r25, 0x00	; 0
+ cb6:	9a da       	rcall	.-2764   	; 0x1ec <assert_handle>
+
+00000cb8 <__mulsi3>:
+ cb8:	62 9f       	mul	r22, r18
+ cba:	d0 01       	movw	r26, r0
+ cbc:	73 9f       	mul	r23, r19
+ cbe:	f0 01       	movw	r30, r0
+ cc0:	82 9f       	mul	r24, r18
+ cc2:	e0 0d       	add	r30, r0
+ cc4:	f1 1d       	adc	r31, r1
+ cc6:	64 9f       	mul	r22, r20
+ cc8:	e0 0d       	add	r30, r0
+ cca:	f1 1d       	adc	r31, r1
+ ccc:	92 9f       	mul	r25, r18
+ cce:	f0 0d       	add	r31, r0
+ cd0:	83 9f       	mul	r24, r19
+ cd2:	f0 0d       	add	r31, r0
+ cd4:	74 9f       	mul	r23, r20
+ cd6:	f0 0d       	add	r31, r0
+ cd8:	65 9f       	mul	r22, r21
+ cda:	f0 0d       	add	r31, r0
+ cdc:	99 27       	eor	r25, r25
+ cde:	72 9f       	mul	r23, r18
+ ce0:	b0 0d       	add	r27, r0
+ ce2:	e1 1d       	adc	r30, r1
+ ce4:	f9 1f       	adc	r31, r25
+ ce6:	63 9f       	mul	r22, r19
+ ce8:	b0 0d       	add	r27, r0
+ cea:	e1 1d       	adc	r30, r1
+ cec:	f9 1f       	adc	r31, r25
+ cee:	bd 01       	movw	r22, r26
+ cf0:	cf 01       	movw	r24, r30
+ cf2:	11 24       	eor	r1, r1
+ cf4:	08 95       	ret
+
+00000cf6 <__divmodhi4>:
+ cf6:	97 fb       	bst	r25, 7
+ cf8:	09 2e       	mov	r0, r25
+ cfa:	07 26       	eor	r0, r23
+ cfc:	0a d0       	rcall	.+20     	; 0xd12 <__divmodhi4_neg1>
+ cfe:	77 fd       	sbrc	r23, 7
+ d00:	04 d0       	rcall	.+8      	; 0xd0a <__divmodhi4_neg2>
+ d02:	27 d0       	rcall	.+78     	; 0xd52 <__udivmodhi4>
+ d04:	06 d0       	rcall	.+12     	; 0xd12 <__divmodhi4_neg1>
+ d06:	00 20       	and	r0, r0
+ d08:	1a f4       	brpl	.+6      	; 0xd10 <__divmodhi4_exit>
+
+00000d0a <__divmodhi4_neg2>:
+ d0a:	70 95       	com	r23
+ d0c:	61 95       	neg	r22
+ d0e:	7f 4f       	sbci	r23, 0xFF	; 255
+
+00000d10 <__divmodhi4_exit>:
+ d10:	08 95       	ret
+
+00000d12 <__divmodhi4_neg1>:
+ d12:	f6 f7       	brtc	.-4      	; 0xd10 <__divmodhi4_exit>
+ d14:	90 95       	com	r25
+ d16:	81 95       	neg	r24
+ d18:	9f 4f       	sbci	r25, 0xFF	; 255
+ d1a:	08 95       	ret
+
+00000d1c <__divmodsi4>:
+ d1c:	97 fb       	bst	r25, 7
+ d1e:	09 2e       	mov	r0, r25
+ d20:	05 26       	eor	r0, r21
+ d22:	0e d0       	rcall	.+28     	; 0xd40 <__divmodsi4_neg1>
+ d24:	57 fd       	sbrc	r21, 7
+ d26:	04 d0       	rcall	.+8      	; 0xd30 <__divmodsi4_neg2>
+ d28:	28 d0       	rcall	.+80     	; 0xd7a <__udivmodsi4>
+ d2a:	0a d0       	rcall	.+20     	; 0xd40 <__divmodsi4_neg1>
+ d2c:	00 1c       	adc	r0, r0
+ d2e:	38 f4       	brcc	.+14     	; 0xd3e <__divmodsi4_exit>
+
+00000d30 <__divmodsi4_neg2>:
+ d30:	50 95       	com	r21
+ d32:	40 95       	com	r20
+ d34:	30 95       	com	r19
+ d36:	21 95       	neg	r18
+ d38:	3f 4f       	sbci	r19, 0xFF	; 255
+ d3a:	4f 4f       	sbci	r20, 0xFF	; 255
+ d3c:	5f 4f       	sbci	r21, 0xFF	; 255
+
+00000d3e <__divmodsi4_exit>:
+ d3e:	08 95       	ret
+
+00000d40 <__divmodsi4_neg1>:
+ d40:	f6 f7       	brtc	.-4      	; 0xd3e <__divmodsi4_exit>
+ d42:	90 95       	com	r25
+ d44:	80 95       	com	r24
+ d46:	70 95       	com	r23
+ d48:	61 95       	neg	r22
+ d4a:	7f 4f       	sbci	r23, 0xFF	; 255
+ d4c:	8f 4f       	sbci	r24, 0xFF	; 255
+ d4e:	9f 4f       	sbci	r25, 0xFF	; 255
+ d50:	08 95       	ret
+
+00000d52 <__udivmodhi4>:
+ d52:	aa 1b       	sub	r26, r26
+ d54:	bb 1b       	sub	r27, r27
+ d56:	51 e1       	ldi	r21, 0x11	; 17
+ d58:	07 c0       	rjmp	.+14     	; 0xd68 <__udivmodhi4_ep>
+
+00000d5a <__udivmodhi4_loop>:
+ d5a:	aa 1f       	adc	r26, r26
+ d5c:	bb 1f       	adc	r27, r27
+ d5e:	a6 17       	cp	r26, r22
+ d60:	b7 07       	cpc	r27, r23
+ d62:	10 f0       	brcs	.+4      	; 0xd68 <__udivmodhi4_ep>
+ d64:	a6 1b       	sub	r26, r22
+ d66:	b7 0b       	sbc	r27, r23
+
+00000d68 <__udivmodhi4_ep>:
+ d68:	88 1f       	adc	r24, r24
+ d6a:	99 1f       	adc	r25, r25
+ d6c:	5a 95       	dec	r21
+ d6e:	a9 f7       	brne	.-22     	; 0xd5a <__udivmodhi4_loop>
+ d70:	80 95       	com	r24
+ d72:	90 95       	com	r25
+ d74:	bc 01       	movw	r22, r24
+ d76:	cd 01       	movw	r24, r26
+ d78:	08 95       	ret
+
+00000d7a <__udivmodsi4>:
+ d7a:	a1 e2       	ldi	r26, 0x21	; 33
+ d7c:	1a 2e       	mov	r1, r26
+ d7e:	aa 1b       	sub	r26, r26
+ d80:	bb 1b       	sub	r27, r27
+ d82:	fd 01       	movw	r30, r26
+ d84:	0d c0       	rjmp	.+26     	; 0xda0 <__udivmodsi4_ep>
+
+00000d86 <__udivmodsi4_loop>:
+ d86:	aa 1f       	adc	r26, r26
+ d88:	bb 1f       	adc	r27, r27
+ d8a:	ee 1f       	adc	r30, r30
+ d8c:	ff 1f       	adc	r31, r31
+ d8e:	a2 17       	cp	r26, r18
+ d90:	b3 07       	cpc	r27, r19
+ d92:	e4 07       	cpc	r30, r20
+ d94:	f5 07       	cpc	r31, r21
+ d96:	20 f0       	brcs	.+8      	; 0xda0 <__udivmodsi4_ep>
+ d98:	a2 1b       	sub	r26, r18
+ d9a:	b3 0b       	sbc	r27, r19
+ d9c:	e4 0b       	sbc	r30, r20
+ d9e:	f5 0b       	sbc	r31, r21
+
+00000da0 <__udivmodsi4_ep>:
+ da0:	66 1f       	adc	r22, r22
+ da2:	77 1f       	adc	r23, r23
+ da4:	88 1f       	adc	r24, r24
+ da6:	99 1f       	adc	r25, r25
+ da8:	1a 94       	dec	r1
+ daa:	69 f7       	brne	.-38     	; 0xd86 <__udivmodsi4_loop>
+ dac:	60 95       	com	r22
+ dae:	70 95       	com	r23
+ db0:	80 95       	com	r24
+ db2:	90 95       	com	r25
+ db4:	9b 01       	movw	r18, r22
+ db6:	ac 01       	movw	r20, r24
+ db8:	bd 01       	movw	r22, r26
+ dba:	cf 01       	movw	r24, r30
+ dbc:	08 95       	ret
+
+00000dbe <_exit>:
+ dbe:	f8 94       	cli
+
+00000dc0 <__stop_program>:
+ dc0:	ff cf       	rjmp	.-2      	; 0xdc0 <__stop_program>

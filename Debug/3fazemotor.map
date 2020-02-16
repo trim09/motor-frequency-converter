@@ -1,0 +1,842 @@
+Archive member included because of file (symbol)
+
+c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr4\libprintf_min.a(vfprintf_min.o)
+                              (vfprintf)
+c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/avr4\libgcc.a(_mulsi3.o)
+                              ./Sources/main.o (__mulsi3)
+c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/avr4\libgcc.a(_divmodhi4.o)
+                              ./Sources/pid.o (__divmodhi4)
+c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/avr4\libgcc.a(_divmodsi4.o)
+                              ./Sources/main.o (__divmodsi4)
+c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/avr4\libgcc.a(_prologue.o)
+                              c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr4\libprintf_min.a(vfprintf_min.o) (__prologue_saves__)
+c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/avr4\libgcc.a(_epilogue.o)
+                              c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr4\libprintf_min.a(vfprintf_min.o) (__epilogue_restores__)
+c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/avr4\libgcc.a(_exit.o)
+                              c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr4/crt90pwm3b.o (exit)
+c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/avr4\libgcc.a(_copy_data.o)
+                              ./Sources/adc.o (__do_copy_data)
+c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/avr4\libgcc.a(_clear_bss.o)
+                              ./Sources/adc.o (__do_clear_bss)
+c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/avr4\libgcc.a(_udivmodhi4.o)
+                              c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/avr4\libgcc.a(_divmodhi4.o) (__udivmodhi4)
+c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/avr4\libgcc.a(_udivmodsi4.o)
+                              c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/avr4\libgcc.a(_divmodsi4.o) (__udivmodsi4)
+c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr4\libc.a(strchr_P.o)
+                              c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr4\libprintf_min.a(vfprintf_min.o) (strchr_P)
+c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr4\libc.a(fputc.o)
+                              c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr4\libprintf_min.a(vfprintf_min.o) (fputc)
+c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr4\libc.a(iob.o)
+                              ./Sources/uart.o (__iob)
+c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr4\libc.a(printf_p.o)
+                              ./Sources/assert.o (printf_P)
+c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr4\libc.a(ultoa_invert.o)
+                              c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr4\libprintf_min.a(vfprintf_min.o) (__ultoa_invert)
+
+Allocating common symbols
+Common symbol       size              file
+
+test_overcurrent    0x2               ./Sources/control/timer0.o
+test_amplitude      0x2               ./Sources/control/timer0.o
+test_command        0x2               ./Sources/control/timer0.o
+__iob               0x6               c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr4\libc.a(iob.o)
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+text             0x00000000         0x00002000         xr
+data             0x00800060         0x0000ffa0         rw !x
+eeprom           0x00810000         0x00010000         rw !x
+fuse             0x00820000         0x00000400         rw !x
+lock             0x00830000         0x00000400         rw !x
+signature        0x00840000         0x00000400         rw !x
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+Address of section .data set to 0x800100
+LOAD c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr4/crt90pwm3b.o
+LOAD c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr4\libprintf_min.a
+LOAD ./Sources/adc.o
+LOAD ./Sources/assert.o
+LOAD ./Sources/break.o
+LOAD ./Sources/dac.o
+LOAD ./Sources/led.o
+LOAD ./Sources/main.o
+LOAD ./Sources/pid.o
+LOAD ./Sources/switch.o
+LOAD ./Sources/time.o
+LOAD ./Sources/uart.o
+LOAD ./Sources/space_vector/SVPWM.o
+LOAD ./Sources/space_vector/psc.o
+LOAD ./Sources/space_vector/table_sin.o
+LOAD ./Sources/space_vector/vector_recalculation.o
+LOAD ./Sources/control/controlVF.o
+LOAD ./Sources/control/current_limitation.o
+LOAD ./Sources/control/mc_control.o
+LOAD ./Sources/control/speed.o
+LOAD ./Sources/control/speed_control.o
+LOAD ./Sources/control/timer0.o
+LOAD c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/avr4\libgcc.a
+LOAD c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr4\libc.a
+LOAD c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/avr4\libgcc.a
+
+.hash
+ *(.hash)
+
+.dynsym
+ *(.dynsym)
+
+.dynstr
+ *(.dynstr)
+
+.gnu.version
+ *(.gnu.version)
+
+.gnu.version_d
+ *(.gnu.version_d)
+
+.gnu.version_r
+ *(.gnu.version_r)
+
+.rel.init
+ *(.rel.init)
+
+.rela.init
+ *(.rela.init)
+
+.rel.text
+ *(.rel.text)
+ *(.rel.text.*)
+ *(.rel.gnu.linkonce.t*)
+
+.rela.text
+ *(.rela.text)
+ *(.rela.text.*)
+ *(.rela.gnu.linkonce.t*)
+
+.rel.fini
+ *(.rel.fini)
+
+.rela.fini
+ *(.rela.fini)
+
+.rel.rodata
+ *(.rel.rodata)
+ *(.rel.rodata.*)
+ *(.rel.gnu.linkonce.r*)
+
+.rela.rodata
+ *(.rela.rodata)
+ *(.rela.rodata.*)
+ *(.rela.gnu.linkonce.r*)
+
+.rel.data
+ *(.rel.data)
+ *(.rel.data.*)
+ *(.rel.gnu.linkonce.d*)
+
+.rela.data
+ *(.rela.data)
+ *(.rela.data.*)
+ *(.rela.gnu.linkonce.d*)
+
+.rel.ctors
+ *(.rel.ctors)
+
+.rela.ctors
+ *(.rela.ctors)
+
+.rel.dtors
+ *(.rel.dtors)
+
+.rela.dtors
+ *(.rela.dtors)
+
+.rel.got
+ *(.rel.got)
+
+.rela.got
+ *(.rela.got)
+
+.rel.bss
+ *(.rel.bss)
+
+.rela.bss
+ *(.rela.bss)
+
+.rel.plt
+ *(.rel.plt)
+
+.rela.plt
+ *(.rela.plt)
+
+.text           0x00000000     0x15a0
+ *(.vectors)
+ .vectors       0x00000000       0x40 c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr4/crt90pwm3b.o
+                0x00000000                __vectors
+                0x00000000                __vector_default
+ *(.vectors)
+ *(.progmem.gcc*)
+ *(.progmem*)
+ .progmem.data  0x00000040       0x17 c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr4\libprintf_min.a(vfprintf_min.o)
+ .progmem.data  0x00000057       0x1e ./Sources/assert.o
+ .progmem.data  0x00000075       0xc1 ./Sources/main.o
+                0x00000136                . = ALIGN (0x2)
+                0x00000136                __trampolines_start = .
+ *(.trampolines)
+ .trampolines   0x00000136        0x0 linker stubs
+ *(.trampolines*)
+                0x00000136                __trampolines_end = .
+ *(.jumptables)
+ *(.jumptables*)
+ *(.lowtext)
+ *(.lowtext*)
+                0x00000136                __ctors_start = .
+ *(.ctors)
+                0x00000136                __ctors_end = .
+                0x00000136                __dtors_start = .
+ *(.dtors)
+                0x00000136                __dtors_end = .
+ SORT(*)(.ctors)
+ SORT(*)(.dtors)
+ *(.init0)
+ .init0         0x00000136        0x0 c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr4/crt90pwm3b.o
+                0x00000136                __init
+ *(.init0)
+ *(.init1)
+ *(.init1)
+ *(.init2)
+ .init2         0x00000136        0xc c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr4/crt90pwm3b.o
+ *(.init2)
+ *(.init3)
+ *(.init3)
+ *(.init4)
+ .init4         0x00000142       0x16 c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/avr4\libgcc.a(_copy_data.o)
+                0x00000142                __do_copy_data
+ .init4         0x00000158       0x10 c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/avr4\libgcc.a(_clear_bss.o)
+                0x00000158                __do_clear_bss
+ *(.init4)
+ *(.init5)
+ *(.init5)
+ *(.init6)
+ *(.init6)
+ *(.init7)
+ *(.init7)
+ *(.init8)
+ *(.init8)
+ *(.init9)
+ .init9         0x00000168        0x4 c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr4/crt90pwm3b.o
+ *(.init9)
+ *(.text)
+ .text          0x0000016c        0x2 c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr4/crt90pwm3b.o
+                0x0000016c                __vector_22
+                0x0000016c                __vector_28
+                0x0000016c                __vector_1
+                0x0000016c                __vector_24
+                0x0000016c                __vector_12
+                0x0000016c                __bad_interrupt
+                0x0000016c                __vector_6
+                0x0000016c                __vector_31
+                0x0000016c                __vector_3
+                0x0000016c                __vector_23
+                0x0000016c                __vector_30
+                0x0000016c                __vector_25
+                0x0000016c                __vector_11
+                0x0000016c                __vector_13
+                0x0000016c                __vector_17
+                0x0000016c                __vector_19
+                0x0000016c                __vector_7
+                0x0000016c                __vector_27
+                0x0000016c                __vector_5
+                0x0000016c                __vector_4
+                0x0000016c                __vector_9
+                0x0000016c                __vector_21
+                0x0000016c                __vector_29
+                0x0000016c                __vector_8
+                0x0000016c                __vector_26
+                0x0000016c                __vector_14
+                0x0000016c                __vector_10
+                0x0000016c                __vector_20
+ .text          0x0000016e        0x0 c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr4\libprintf_min.a(vfprintf_min.o)
+ .text          0x0000016e      0x16e ./Sources/adc.o
+                0x00000188                adc_get_speed_pot_value
+                0x000001b8                adc_get_voltage_value
+                0x0000016e                adc_init
+                0x000001d4                adc_get_current_value
+                0x000001da                __vector_18
+ .text          0x000002dc       0x50 ./Sources/assert.o
+                0x000002dc                assert_handle
+ .text          0x0000032c       0x26 ./Sources/break.o
+                0x00000338                break_off
+                0x00000344                break_init
+                0x0000032c                break_on
+ .text          0x00000352       0x86 ./Sources/dac.o
+                0x0000035a                dac_set_value
+                0x00000364                dac_set_value_scaled
+                0x00000352                dac_init
+ .text          0x000003d8       0x6a ./Sources/led.o
+                0x000003ee                led1_toggle
+                0x000003d8                led_init
+                0x000003fc                led1_set_state
+                0x00000426                led2_set_state
+                0x00000418                led2_toggle
+ .text          0x00000442      0x216 ./Sources/main.o
+                0x00000468                print_info
+                0x00000442                toFreq
+                0x0000060c                main
+ .text          0x00000658      0x236 ./Sources/pid.o
+                0x00000658                pid_Init
+                0x000006de                pid_Controller
+                0x00000882                pid_Reset_Integrator
+ .text          0x0000088e       0x18 ./Sources/switch.o
+                0x0000089a                switch_get_state
+                0x0000088e                switch_init
+ .text          0x000008a6       0xba ./Sources/time.o
+                0x000008b6                time_get
+                0x00000906                time_get_diff
+                0x00000932                __vector_15
+                0x000008a6                time_init
+ .text          0x00000960       0x6a ./Sources/uart.o
+                0x00000960                uart_init
+ .text          0x000009ca      0x16e ./Sources/space_vector/SVPWM.o
+                0x000009ca                SVPWM
+ .text          0x00000b38      0x1a6 ./Sources/space_vector/psc.o
+                0x00000c26                psc_init
+                0x00000b58                psc_load
+                0x00000b38                psc_halt
+ .text          0x00000cde        0x0 ./Sources/space_vector/table_sin.o
+ .text          0x00000cde      0x106 ./Sources/space_vector/vector_recalculation.o
+                0x00000cde                vector_set_new_speed
+                0x00000cfa                __vector_2
+ .text          0x00000de4       0x40 ./Sources/control/controlVF.o
+                0x00000de4                controlVF
+ .text          0x00000e24        0x6 ./Sources/control/current_limitation.o
+                0x00000e24                current_limitation
+ .text          0x00000e2a        0x0 ./Sources/control/mc_control.o
+ .text          0x00000e2a        0xa ./Sources/control/speed.o
+                0x00000e30                dummy_get_requested_speed
+                0x00000e2a                dummy_get_real_speed
+ .text          0x00000e34       0xb4 ./Sources/control/speed_control.o
+                0x00000e34                command_reset
+                0x00000e46                command_get_old_value
+                0x00000e68                command_get
+ .text          0x00000ee8      0x1aa ./Sources/control/timer0.o
+                0x00000ee8                timer0_init
+                0x00000efa                __vector_16
+ .text          0x00001092        0x0 c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/avr4\libgcc.a(_mulsi3.o)
+ .text          0x00001092        0x0 c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/avr4\libgcc.a(_divmodhi4.o)
+ .text          0x00001092        0x0 c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/avr4\libgcc.a(_divmodsi4.o)
+ .text          0x00001092        0x0 c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/avr4\libgcc.a(_prologue.o)
+ .text          0x00001092        0x0 c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/avr4\libgcc.a(_epilogue.o)
+ .text          0x00001092        0x0 c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/avr4\libgcc.a(_exit.o)
+ .text          0x00001092        0x0 c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/avr4\libgcc.a(_copy_data.o)
+ .text          0x00001092        0x0 c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/avr4\libgcc.a(_clear_bss.o)
+ .text          0x00001092        0x0 c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/avr4\libgcc.a(_udivmodhi4.o)
+ .text          0x00001092        0x0 c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/avr4\libgcc.a(_udivmodsi4.o)
+ .text          0x00001092        0x0 c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr4\libc.a(strchr_P.o)
+ .text          0x00001092        0x0 c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr4\libc.a(fputc.o)
+ .text          0x00001092        0x0 c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr4\libc.a(iob.o)
+ .text          0x00001092        0x0 c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr4\libc.a(printf_p.o)
+ .text          0x00001092        0x0 c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr4\libc.a(ultoa_invert.o)
+                0x00001092                . = ALIGN (0x2)
+ *(.text.*)
+ .text.avr-libc
+                0x00001092      0x226 c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr4\libprintf_min.a(vfprintf_min.o)
+                0x00001092                vfprintf
+ .text.libgcc   0x000012b8       0x3e c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/avr4\libgcc.a(_mulsi3.o)
+                0x000012b8                __mulsi3
+ .text.libgcc   0x000012f6       0x26 c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/avr4\libgcc.a(_divmodhi4.o)
+                0x000012f6                __divmodhi4
+                0x000012f6                _div
+ .text.libgcc   0x0000131c       0x36 c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/avr4\libgcc.a(_divmodsi4.o)
+                0x0000131c                __divmodsi4
+ .text.libgcc   0x00001352       0x38 c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/avr4\libgcc.a(_prologue.o)
+                0x00001352                __prologue_saves__
+ .text.libgcc   0x0000138a       0x36 c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/avr4\libgcc.a(_epilogue.o)
+                0x0000138a                __epilogue_restores__
+ .text.libgcc   0x000013c0        0x0 c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/avr4\libgcc.a(_exit.o)
+ .text.libgcc   0x000013c0        0x0 c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/avr4\libgcc.a(_copy_data.o)
+ .text.libgcc   0x000013c0        0x0 c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/avr4\libgcc.a(_clear_bss.o)
+ .text.libgcc   0x000013c0       0x28 c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/avr4\libgcc.a(_udivmodhi4.o)
+                0x000013c0                __udivmodhi4
+ .text.libgcc   0x000013e8       0x44 c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/avr4\libgcc.a(_udivmodsi4.o)
+                0x000013e8                __udivmodsi4
+ .text.avr-libc
+                0x0000142c       0x16 c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr4\libc.a(strchr_P.o)
+                0x0000142c                strchr_P
+ .text.avr-libc
+                0x00001442       0x58 c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr4\libc.a(fputc.o)
+                0x00001442                fputc
+ .text.avr-libc
+                0x0000149a       0x46 c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr4\libc.a(printf_p.o)
+                0x0000149a                printf_P
+ .text.avr-libc
+                0x000014e0       0xbc c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr4\libc.a(ultoa_invert.o)
+                0x000014e0                __ultoa_invert
+                0x0000159c                . = ALIGN (0x2)
+ *(.fini9)
+ .fini9         0x0000159c        0x0 c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/avr4\libgcc.a(_exit.o)
+                0x0000159c                exit
+                0x0000159c                _exit
+ *(.fini9)
+ *(.fini8)
+ *(.fini8)
+ *(.fini7)
+ *(.fini7)
+ *(.fini6)
+ *(.fini6)
+ *(.fini5)
+ *(.fini5)
+ *(.fini4)
+ *(.fini4)
+ *(.fini3)
+ *(.fini3)
+ *(.fini2)
+ *(.fini2)
+ *(.fini1)
+ *(.fini1)
+ *(.fini0)
+ .fini0         0x0000159c        0x4 c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/avr4\libgcc.a(_exit.o)
+ *(.fini0)
+                0x000015a0                _etext = .
+
+.data           0x00800100       0x9e load address 0x000015a0
+                0x00800100                PROVIDE (__data_start, .)
+ *(.data)
+ .data          0x00800100        0x0 c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr4/crt90pwm3b.o
+ .data          0x00800100        0x0 c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr4\libprintf_min.a(vfprintf_min.o)
+ .data          0x00800100        0x3 ./Sources/adc.o
+ .data          0x00800103        0x0 ./Sources/assert.o
+ .data          0x00800103        0x0 ./Sources/break.o
+ .data          0x00800103        0x0 ./Sources/dac.o
+ .data          0x00800103        0x0 ./Sources/led.o
+ .data          0x00800103        0x0 ./Sources/main.o
+ .data          0x00800103        0x0 ./Sources/pid.o
+ .data          0x00800103        0x0 ./Sources/switch.o
+ .data          0x00800103        0x0 ./Sources/time.o
+ .data          0x00800103       0x1c ./Sources/uart.o
+ .data          0x0080011f        0x1 ./Sources/space_vector/SVPWM.o
+ .data          0x00800120        0x0 ./Sources/space_vector/psc.o
+ .data          0x00800120       0x7d ./Sources/space_vector/table_sin.o
+                0x00800120                tab_sin
+ .data          0x0080019d        0x0 ./Sources/space_vector/vector_recalculation.o
+ .data          0x0080019d        0x0 ./Sources/control/controlVF.o
+ .data          0x0080019d        0x0 ./Sources/control/current_limitation.o
+ .data          0x0080019d        0x0 ./Sources/control/mc_control.o
+ .data          0x0080019d        0x0 ./Sources/control/speed.o
+ .data          0x0080019d        0x0 ./Sources/control/speed_control.o
+ .data          0x0080019d        0x0 ./Sources/control/timer0.o
+ .data          0x0080019d        0x0 c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/avr4\libgcc.a(_mulsi3.o)
+ .data          0x0080019d        0x0 c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/avr4\libgcc.a(_divmodhi4.o)
+ .data          0x0080019d        0x0 c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/avr4\libgcc.a(_divmodsi4.o)
+ .data          0x0080019d        0x0 c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/avr4\libgcc.a(_prologue.o)
+ .data          0x0080019d        0x0 c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/avr4\libgcc.a(_epilogue.o)
+ .data          0x0080019d        0x0 c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/avr4\libgcc.a(_exit.o)
+ .data          0x0080019d        0x0 c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/avr4\libgcc.a(_copy_data.o)
+ .data          0x0080019d        0x0 c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/avr4\libgcc.a(_clear_bss.o)
+ .data          0x0080019d        0x0 c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/avr4\libgcc.a(_udivmodhi4.o)
+ .data          0x0080019d        0x0 c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/avr4\libgcc.a(_udivmodsi4.o)
+ .data          0x0080019d        0x0 c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr4\libc.a(strchr_P.o)
+ .data          0x0080019d        0x0 c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr4\libc.a(fputc.o)
+ .data          0x0080019d        0x0 c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr4\libc.a(iob.o)
+ .data          0x0080019d        0x0 c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr4\libc.a(printf_p.o)
+ .data          0x0080019d        0x0 c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr4\libc.a(ultoa_invert.o)
+ *(.data*)
+ *(.rodata)
+ *(.rodata*)
+ *(.gnu.linkonce.d*)
+                0x0080019e                . = ALIGN (0x2)
+ *fill*         0x0080019d        0x1 00
+                0x0080019e                _edata = .
+                0x0080019e                PROVIDE (__data_end, .)
+
+.bss            0x0080019e       0x24
+                0x0080019e                PROVIDE (__bss_start, .)
+ *(.bss)
+ .bss           0x0080019e        0x0 c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr4/crt90pwm3b.o
+ .bss           0x0080019e        0x0 c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr4\libprintf_min.a(vfprintf_min.o)
+ .bss           0x0080019e        0x6 ./Sources/adc.o
+ .bss           0x008001a4        0x0 ./Sources/assert.o
+ .bss           0x008001a4        0x0 ./Sources/break.o
+ .bss           0x008001a4        0x0 ./Sources/dac.o
+ .bss           0x008001a4        0x0 ./Sources/led.o
+ .bss           0x008001a4        0x2 ./Sources/main.o
+ .bss           0x008001a6        0x0 ./Sources/pid.o
+ .bss           0x008001a6        0x0 ./Sources/switch.o
+ .bss           0x008001a6        0x2 ./Sources/time.o
+ .bss           0x008001a8        0x0 ./Sources/uart.o
+ .bss           0x008001a8        0x1 ./Sources/space_vector/SVPWM.o
+ .bss           0x008001a9        0x1 ./Sources/space_vector/psc.o
+ .bss           0x008001aa        0x0 ./Sources/space_vector/table_sin.o
+ .bss           0x008001aa        0x7 ./Sources/space_vector/vector_recalculation.o
+ .bss           0x008001b1        0x0 ./Sources/control/controlVF.o
+ .bss           0x008001b1        0x0 ./Sources/control/current_limitation.o
+ .bss           0x008001b1        0x0 ./Sources/control/mc_control.o
+ .bss           0x008001b1        0x0 ./Sources/control/speed.o
+ .bss           0x008001b1        0x4 ./Sources/control/speed_control.o
+ .bss           0x008001b5        0x1 ./Sources/control/timer0.o
+ .bss           0x008001b6        0x0 c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/avr4\libgcc.a(_mulsi3.o)
+ .bss           0x008001b6        0x0 c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/avr4\libgcc.a(_divmodhi4.o)
+ .bss           0x008001b6        0x0 c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/avr4\libgcc.a(_divmodsi4.o)
+ .bss           0x008001b6        0x0 c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/avr4\libgcc.a(_prologue.o)
+ .bss           0x008001b6        0x0 c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/avr4\libgcc.a(_epilogue.o)
+ .bss           0x008001b6        0x0 c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/avr4\libgcc.a(_exit.o)
+ .bss           0x008001b6        0x0 c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/avr4\libgcc.a(_copy_data.o)
+ .bss           0x008001b6        0x0 c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/avr4\libgcc.a(_clear_bss.o)
+ .bss           0x008001b6        0x0 c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/avr4\libgcc.a(_udivmodhi4.o)
+ .bss           0x008001b6        0x0 c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/avr4\libgcc.a(_udivmodsi4.o)
+ .bss           0x008001b6        0x0 c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr4\libc.a(strchr_P.o)
+ .bss           0x008001b6        0x0 c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr4\libc.a(fputc.o)
+ .bss           0x008001b6        0x0 c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr4\libc.a(iob.o)
+ .bss           0x008001b6        0x0 c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr4\libc.a(printf_p.o)
+ .bss           0x008001b6        0x0 c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr4\libc.a(ultoa_invert.o)
+ *(.bss*)
+ *(COMMON)
+ COMMON         0x008001b6        0x0 ./Sources/adc.o
+ COMMON         0x008001b6        0x6 ./Sources/control/timer0.o
+                0x008001b6                test_overcurrent
+                0x008001b8                test_amplitude
+                0x008001ba                test_command
+ COMMON         0x008001bc        0x6 c:/program files/winavr/bin/../lib/gcc/avr/4.3.3/../../../../avr/lib/avr4\libc.a(iob.o)
+                0x008001bc                __iob
+                0x008001c2                PROVIDE (__bss_end, .)
+                0x000015a0                __data_load_start = LOADADDR (.data)
+                0x0000163e                __data_load_end = (__data_load_start + SIZEOF (.data))
+
+.noinit         0x008001c2        0x0
+                0x008001c2                PROVIDE (__noinit_start, .)
+ *(.noinit*)
+                0x008001c2                PROVIDE (__noinit_end, .)
+                0x008001c2                _end = .
+                0x008001c2                PROVIDE (__heap_start, .)
+
+.eeprom         0x00810000        0x0
+ *(.eeprom*)
+                0x00810000                __eeprom_end = .
+
+.fuse
+ *(.fuse)
+ *(.lfuse)
+ *(.hfuse)
+ *(.efuse)
+
+.lock
+ *(.lock*)
+
+.signature
+ *(.signature*)
+
+.stab
+ *(.stab)
+
+.stabstr
+ *(.stabstr)
+
+.stab.excl
+ *(.stab.excl)
+
+.stab.exclstr
+ *(.stab.exclstr)
+
+.stab.index
+ *(.stab.index)
+
+.stab.indexstr
+ *(.stab.indexstr)
+
+.comment
+ *(.comment)
+
+.debug
+ *(.debug)
+
+.line
+ *(.line)
+
+.debug_srcinfo
+ *(.debug_srcinfo)
+
+.debug_sfnames
+ *(.debug_sfnames)
+
+.debug_aranges  0x00000000      0x240
+ *(.debug_aranges)
+ .debug_aranges
+                0x00000000       0x20 ./Sources/adc.o
+ .debug_aranges
+                0x00000020       0x20 ./Sources/assert.o
+ .debug_aranges
+                0x00000040       0x20 ./Sources/break.o
+ .debug_aranges
+                0x00000060       0x20 ./Sources/dac.o
+ .debug_aranges
+                0x00000080       0x20 ./Sources/led.o
+ .debug_aranges
+                0x000000a0       0x20 ./Sources/main.o
+ .debug_aranges
+                0x000000c0       0x20 ./Sources/pid.o
+ .debug_aranges
+                0x000000e0       0x20 ./Sources/switch.o
+ .debug_aranges
+                0x00000100       0x20 ./Sources/time.o
+ .debug_aranges
+                0x00000120       0x20 ./Sources/uart.o
+ .debug_aranges
+                0x00000140       0x20 ./Sources/space_vector/SVPWM.o
+ .debug_aranges
+                0x00000160       0x20 ./Sources/space_vector/psc.o
+ .debug_aranges
+                0x00000180       0x20 ./Sources/space_vector/vector_recalculation.o
+ .debug_aranges
+                0x000001a0       0x20 ./Sources/control/controlVF.o
+ .debug_aranges
+                0x000001c0       0x20 ./Sources/control/current_limitation.o
+ .debug_aranges
+                0x000001e0       0x20 ./Sources/control/speed.o
+ .debug_aranges
+                0x00000200       0x20 ./Sources/control/speed_control.o
+ .debug_aranges
+                0x00000220       0x20 ./Sources/control/timer0.o
+
+.debug_pubnames
+                0x00000000      0x53c
+ *(.debug_pubnames)
+ .debug_pubnames
+                0x00000000       0x8b ./Sources/adc.o
+ .debug_pubnames
+                0x0000008b       0x30 ./Sources/assert.o
+ .debug_pubnames
+                0x000000bb       0x3c ./Sources/break.o
+ .debug_pubnames
+                0x000000f7       0x56 ./Sources/dac.o
+ .debug_pubnames
+                0x0000014d       0x65 ./Sources/led.o
+ .debug_pubnames
+                0x000001b2       0x41 ./Sources/main.o
+ .debug_pubnames
+                0x000001f3       0x4b ./Sources/pid.o
+ .debug_pubnames
+                0x0000023e       0x37 ./Sources/switch.o
+ .debug_pubnames
+                0x00000275       0x4f ./Sources/time.o
+ .debug_pubnames
+                0x000002c4       0x2c ./Sources/uart.o
+ .debug_pubnames
+                0x000002f0       0x28 ./Sources/space_vector/SVPWM.o
+ .debug_pubnames
+                0x00000318       0x45 ./Sources/space_vector/psc.o
+ .debug_pubnames
+                0x0000035d       0x1e ./Sources/space_vector/table_sin.o
+ .debug_pubnames
+                0x0000037b       0x46 ./Sources/space_vector/vector_recalculation.o
+ .debug_pubnames
+                0x000003c1       0x2c ./Sources/control/controlVF.o
+ .debug_pubnames
+                0x000003ed       0x35 ./Sources/control/current_limitation.o
+ .debug_pubnames
+                0x00000422       0x49 ./Sources/control/speed.o
+ .debug_pubnames
+                0x0000046b       0x5a ./Sources/control/speed_control.o
+ .debug_pubnames
+                0x000004c5       0x77 ./Sources/control/timer0.o
+
+.debug_info     0x00000000     0x1d70
+ *(.debug_info)
+ .debug_info    0x00000000      0x2b9 ./Sources/adc.o
+ .debug_info    0x000002b9      0x19d ./Sources/assert.o
+ .debug_info    0x00000456       0xa1 ./Sources/break.o
+ .debug_info    0x000004f7      0x118 ./Sources/dac.o
+ .debug_info    0x0000060f      0x10c ./Sources/led.o
+ .debug_info    0x0000071b      0x306 ./Sources/main.o
+ .debug_info    0x00000a21      0x225 ./Sources/pid.o
+ .debug_info    0x00000c46       0xb0 ./Sources/switch.o
+ .debug_info    0x00000cf6      0x1b1 ./Sources/time.o
+ .debug_info    0x00000ea7      0x255 ./Sources/uart.o
+ .debug_info    0x000010fc      0x1a8 ./Sources/space_vector/SVPWM.o
+ .debug_info    0x000012a4      0x1f3 ./Sources/space_vector/psc.o
+ .debug_info    0x00001497       0x97 ./Sources/space_vector/table_sin.o
+ .debug_info    0x0000152e      0x23b ./Sources/space_vector/vector_recalculation.o
+ .debug_info    0x00001769       0xdd ./Sources/control/controlVF.o
+ .debug_info    0x00001846       0xdd ./Sources/control/current_limitation.o
+ .debug_info    0x00001923        0x0 ./Sources/control/mc_control.o
+ .debug_info    0x00001923       0x9d ./Sources/control/speed.o
+ .debug_info    0x000019c0      0x137 ./Sources/control/speed_control.o
+ .debug_info    0x00001af7      0x279 ./Sources/control/timer0.o
+ *(.gnu.linkonce.wi.*)
+
+.debug_abbrev   0x00000000     0x10e0
+ *(.debug_abbrev)
+ .debug_abbrev  0x00000000      0x1a2 ./Sources/adc.o
+ .debug_abbrev  0x000001a2      0x12a ./Sources/assert.o
+ .debug_abbrev  0x000002cc       0x4a ./Sources/break.o
+ .debug_abbrev  0x00000316       0xb6 ./Sources/dac.o
+ .debug_abbrev  0x000003cc       0xa8 ./Sources/led.o
+ .debug_abbrev  0x00000474      0x136 ./Sources/main.o
+ .debug_abbrev  0x000005aa       0xdb ./Sources/pid.o
+ .debug_abbrev  0x00000685       0x84 ./Sources/switch.o
+ .debug_abbrev  0x00000709      0x124 ./Sources/time.o
+ .debug_abbrev  0x0000082d      0x16a ./Sources/uart.o
+ .debug_abbrev  0x00000997       0xe4 ./Sources/space_vector/SVPWM.o
+ .debug_abbrev  0x00000a7b       0xd9 ./Sources/space_vector/psc.o
+ .debug_abbrev  0x00000b54       0x6c ./Sources/space_vector/table_sin.o
+ .debug_abbrev  0x00000bc0      0x164 ./Sources/space_vector/vector_recalculation.o
+ .debug_abbrev  0x00000d24       0xa3 ./Sources/control/controlVF.o
+ .debug_abbrev  0x00000dc7       0x94 ./Sources/control/current_limitation.o
+ .debug_abbrev  0x00000e5b        0x1 ./Sources/control/mc_control.o
+ .debug_abbrev  0x00000e5c       0x50 ./Sources/control/speed.o
+ .debug_abbrev  0x00000eac       0xed ./Sources/control/speed_control.o
+ .debug_abbrev  0x00000f99      0x147 ./Sources/control/timer0.o
+
+.debug_line     0x00000000     0x324d
+ *(.debug_line)
+ .debug_line    0x00000000      0x44e ./Sources/adc.o
+ .debug_line    0x0000044e      0x387 ./Sources/assert.o
+ .debug_line    0x000007d5      0x1a3 ./Sources/break.o
+ .debug_line    0x00000978      0x30a ./Sources/dac.o
+ .debug_line    0x00000c82      0x1dd ./Sources/led.o
+ .debug_line    0x00000e5f      0x467 ./Sources/main.o
+ .debug_line    0x000012c6      0x16b ./Sources/pid.o
+ .debug_line    0x00001431      0x183 ./Sources/switch.o
+ .debug_line    0x000015b4      0x23c ./Sources/time.o
+ .debug_line    0x000017f0      0x334 ./Sources/uart.o
+ .debug_line    0x00001b24      0x355 ./Sources/space_vector/SVPWM.o
+ .debug_line    0x00001e79      0x406 ./Sources/space_vector/psc.o
+ .debug_line    0x0000227f       0xce ./Sources/space_vector/table_sin.o
+ .debug_line    0x0000234d      0x3d8 ./Sources/space_vector/vector_recalculation.o
+ .debug_line    0x00002725      0x22e ./Sources/control/controlVF.o
+ .debug_line    0x00002953      0x187 ./Sources/control/current_limitation.o
+ .debug_line    0x00002ada       0x47 ./Sources/control/mc_control.o
+ .debug_line    0x00002b21       0xe1 ./Sources/control/speed.o
+ .debug_line    0x00002c02      0x1c9 ./Sources/control/speed_control.o
+ .debug_line    0x00002dcb      0x482 ./Sources/control/timer0.o
+
+.debug_frame    0x00000000      0x410
+ *(.debug_frame)
+ .debug_frame   0x00000000       0x60 ./Sources/adc.o
+ .debug_frame   0x00000060       0x20 ./Sources/assert.o
+ .debug_frame   0x00000080       0x40 ./Sources/break.o
+ .debug_frame   0x000000c0       0x40 ./Sources/dac.o
+ .debug_frame   0x00000100       0x60 ./Sources/led.o
+ .debug_frame   0x00000160       0x40 ./Sources/main.o
+ .debug_frame   0x000001a0       0x40 ./Sources/pid.o
+ .debug_frame   0x000001e0       0x30 ./Sources/switch.o
+ .debug_frame   0x00000210       0x50 ./Sources/time.o
+ .debug_frame   0x00000260       0x40 ./Sources/uart.o
+ .debug_frame   0x000002a0       0x20 ./Sources/space_vector/SVPWM.o
+ .debug_frame   0x000002c0       0x40 ./Sources/space_vector/psc.o
+ .debug_frame   0x00000300       0x30 ./Sources/space_vector/vector_recalculation.o
+ .debug_frame   0x00000330       0x20 ./Sources/control/controlVF.o
+ .debug_frame   0x00000350       0x20 ./Sources/control/current_limitation.o
+ .debug_frame   0x00000370       0x30 ./Sources/control/speed.o
+ .debug_frame   0x000003a0       0x40 ./Sources/control/speed_control.o
+ .debug_frame   0x000003e0       0x30 ./Sources/control/timer0.o
+
+.debug_str      0x00000000      0x8b1
+ *(.debug_str)
+ .debug_str     0x00000000      0x16e ./Sources/adc.o
+                                0x1aa (size before relaxing)
+ .debug_str     0x0000016e       0x72 ./Sources/assert.o
+                                0x128 (size before relaxing)
+ .debug_str     0x000001e0       0x31 ./Sources/break.o
+                                 0xc9 (size before relaxing)
+ .debug_str     0x00000211       0x3d ./Sources/dac.o
+                                 0xfe (size before relaxing)
+ .debug_str     0x0000024e       0x58 ./Sources/led.o
+                                 0xf6 (size before relaxing)
+ .debug_str     0x000002a6       0x98 ./Sources/main.o
+                                0x1a0 (size before relaxing)
+ .debug_str     0x0000033e       0xf3 ./Sources/pid.o
+                                0x19b (size before relaxing)
+ .debug_str     0x00000431       0x31 ./Sources/switch.o
+                                 0xd1 (size before relaxing)
+ .debug_str     0x00000462       0x54 ./Sources/time.o
+                                0x12b (size before relaxing)
+ .debug_str     0x000004b6       0xa2 ./Sources/uart.o
+                                0x14f (size before relaxing)
+ .debug_str     0x00000558       0x81 ./Sources/space_vector/SVPWM.o
+                                0x132 (size before relaxing)
+ .debug_str     0x000005d9       0x6c ./Sources/space_vector/psc.o
+                                0x128 (size before relaxing)
+ .debug_str     0x00000645       0x24 ./Sources/space_vector/table_sin.o
+                                 0xcc (size before relaxing)
+ .debug_str     0x00000669       0xc7 ./Sources/space_vector/vector_recalculation.o
+                                0x1e1 (size before relaxing)
+ .debug_str     0x00000730       0x29 ./Sources/control/controlVF.o
+                                 0xfb (size before relaxing)
+ .debug_str     0x00000759       0x3b ./Sources/control/current_limitation.o
+                                 0xfe (size before relaxing)
+ .debug_str     0x00000794       0x4a ./Sources/control/speed.o
+                                 0xea (size before relaxing)
+ .debug_str     0x000007de       0x53 ./Sources/control/speed_control.o
+                                0x12e (size before relaxing)
+ .debug_str     0x00000831       0x80 ./Sources/control/timer0.o
+                                0x1df (size before relaxing)
+
+.debug_loc      0x00000000      0xbac
+ *(.debug_loc)
+ .debug_loc     0x00000000       0x8e ./Sources/adc.o
+ .debug_loc     0x0000008e       0x78 ./Sources/assert.o
+ .debug_loc     0x00000106       0xb0 ./Sources/dac.o
+ .debug_loc     0x000001b6       0x3c ./Sources/led.o
+ .debug_loc     0x000001f2       0x68 ./Sources/main.o
+ .debug_loc     0x0000025a      0x246 ./Sources/pid.o
+ .debug_loc     0x000004a0       0x99 ./Sources/time.o
+ .debug_loc     0x00000539       0x5e ./Sources/uart.o
+ .debug_loc     0x00000597      0x1c9 ./Sources/space_vector/SVPWM.o
+ .debug_loc     0x00000760      0x17d ./Sources/space_vector/psc.o
+ .debug_loc     0x000008dd       0x5e ./Sources/space_vector/vector_recalculation.o
+ .debug_loc     0x0000093b       0x90 ./Sources/control/controlVF.o
+ .debug_loc     0x000009cb       0x40 ./Sources/control/current_limitation.o
+ .debug_loc     0x00000a0b       0x50 ./Sources/control/speed_control.o
+ .debug_loc     0x00000a5b      0x151 ./Sources/control/timer0.o
+
+.debug_macinfo  0x00000000    0x6839f
+ *(.debug_macinfo)
+ .debug_macinfo
+                0x00000000     0x8fe9 ./Sources/adc.o
+ .debug_macinfo
+                0x00008fe9     0x8a05 ./Sources/assert.o
+ .debug_macinfo
+                0x000119ee     0x6aeb ./Sources/break.o
+ .debug_macinfo
+                0x000184d9     0x7fa7 ./Sources/dac.o
+ .debug_macinfo
+                0x00020480     0x6b13 ./Sources/led.o
+ .debug_macinfo
+                0x00026f93     0x8963 ./Sources/main.o
+ .debug_macinfo
+                0x0002f8f6     0x1322 ./Sources/pid.o
+ .debug_macinfo
+                0x00030c18     0x6af0 ./Sources/switch.o
+ .debug_macinfo
+                0x00037708     0x6e8a ./Sources/time.o
+ .debug_macinfo
+                0x0003e592     0x8261 ./Sources/uart.o
+ .debug_macinfo
+                0x000467f3     0x262c ./Sources/space_vector/SVPWM.o
+ .debug_macinfo
+                0x00048e1f     0x727c ./Sources/space_vector/psc.o
+ .debug_macinfo
+                0x0005009b     0x1503 ./Sources/space_vector/table_sin.o
+ .debug_macinfo
+                0x0005159e     0x78a2 ./Sources/space_vector/vector_recalculation.o
+ .debug_macinfo
+                0x00058e40     0x2767 ./Sources/control/controlVF.o
+ .debug_macinfo
+                0x0005b5a7     0x1796 ./Sources/control/current_limitation.o
+ .debug_macinfo
+                0x0005cd3d      0xb90 ./Sources/control/mc_control.o
+ .debug_macinfo
+                0x0005d8cd     0x131e ./Sources/control/speed.o
+ .debug_macinfo
+                0x0005ebeb     0x179a ./Sources/control/speed_control.o
+ .debug_macinfo
+                0x00060385     0x801a ./Sources/control/timer0.o
+OUTPUT(3fazemotor.elf elf32-avr)
+LOAD linker stubs
+
+.debug_ranges   0x00000000       0xc8
+ .debug_ranges  0x00000000       0x48 ./Sources/assert.o
+ .debug_ranges  0x00000048       0x48 ./Sources/main.o
+ .debug_ranges  0x00000090       0x38 ./Sources/control/timer0.o
